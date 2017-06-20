@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yan.dao.AdminDao">
+
+    <resultMap id="BaseMap" type="com.yan.model.TblAdmin">
+        <id column="id" property="id" jdbcType="BIGINT"/>
+        <result column="username" property="username" jdbcType="VARCHAR"/>
+        <result column="password" property="password" jdbcType="VARCHAR"/>
+        <result property="age" column="user_age" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseMap">
+        SELECT * FROM tbl_admin
+        WHERE id = #{Id}
+    </select>
+
+
+    <select id="selectAllAdmin" resultMap="BaseMap">
+        SELECT * FROM tbl_admin
+    </select>
+
+    <select id="findAllUser" resultMap="BaseMap" resultType="com.yan.model.TblAdmin">
+        select * from tbl_admin
+    </select>
+
+</mapper>
