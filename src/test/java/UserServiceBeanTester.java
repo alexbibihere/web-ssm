@@ -31,7 +31,9 @@ public class UserServiceBeanTester {
     @Autowired
     private AdminDao adminDao;
     @Autowired
-    private AdminServiceBean userServiceBean;
+    private AdminServiceBean adminServiceBean;
+    @Autowired
+    private UserServiceBean userServiceBean;
    /* *//*@Resource
     private UserService userService;*//*
 
@@ -56,12 +58,11 @@ public class UserServiceBeanTester {
 
     @Test
     public void test1() {
-/*
         List<TblUser> user =  userServiceBean.getAllUser();
         // System.out.println(user.getUserName());
         for (TblUser tblUser:user){
          logger.info("值："+tblUser+user);
         }
-        System.out.println(JSONObject.toJSONString(user));*/
+        System.out.println(JSONObject.toJSONString(user));
     }
 }

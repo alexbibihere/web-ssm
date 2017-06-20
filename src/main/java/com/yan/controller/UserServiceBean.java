@@ -1,5 +1,6 @@
 package com.yan.controller;
 
+import com.yan.model.TblAdmin;
 import com.yan.model.TblUser;
 import com.yan.service.UserService;
 import org.apache.log4j.Logger;
@@ -57,6 +58,13 @@ public class UserServiceBean implements Serializable{
             List<TblUser> tblUsers = userService.getAllUser();
             request.setAttribute("user",tblUsers);
         return "login";
+    }
+
+
+
+    public List<TblUser> getAllUser() {
+        List<TblUser> tblUsers = userService.getAllUser();
+        return tblUsers;
     }
 
 
