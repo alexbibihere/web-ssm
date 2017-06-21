@@ -35,6 +35,7 @@
     <a href="jsp/login.jsp">跳到登录页</a>
     <a href="jsp/admin.jsp">跳到管理员页</a>
     <a href="jsp/showUser.jsp">跳到showUser页</a>
+    <a href="jsp/welcome.jsp">跳到欢迎页</a>
 
 
 

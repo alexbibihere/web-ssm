@@ -50,7 +50,7 @@ public class UserServiceBean implements Serializable{
            model.addAttribute("user", user);
        }catch (Exception e){
        }
-        return "login";
+        return "welcome";
     }
 
     @RequestMapping("/select")

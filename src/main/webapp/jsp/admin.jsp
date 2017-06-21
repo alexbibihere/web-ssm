@@ -19,14 +19,18 @@
         <th>姓名</th>
         <th>密码</th>
     </tr>
-    <c:if test="${!empty tblAdminList }">
+  <%--  <c:if test="${!empty tblAdminList }">
         <c:forEach items="${tblAdminList}" var="list">
             <tr>
                 <td>${list.username}</td>
                 <td>${list.password}</td>
             </tr>
         </c:forEach>
-    </c:if>
+    </c:if>--%>
+   1: ${username}
+    2:${password}
+
+
     </tbody>
 </table>
 
