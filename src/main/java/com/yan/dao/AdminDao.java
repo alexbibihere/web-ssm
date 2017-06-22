@@ -13,4 +13,12 @@ public interface AdminDao {
     List<TblAdmin> selectAllAdmin();
 
     List<TblAdmin> findAllUser();
+
+    int deleteByPrimaryKey(Long id);
+
+    int updateByPrimaryKey(TblAdmin admin);
+
+    Long insertSelective(TblAdmin admin);
+
+    TblAdmin selectByPrimaryKey(Long id);
 }

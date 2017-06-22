@@ -23,4 +23,16 @@
         select * from tbl_admin
     </select>
 
+    <select id="deleteByPrimaryKey"  resultType="com.yan.model.TblAdmin">
+        delete * from tbl_admin where id=#{id}
+    </select>
+
+    <select id="updateByPrimaryKey"  resultType="com.yan.model.TblAdmin">
+        update   tbl_admin  set id,username,password    where id=#{id}
+    </select>
+
+    <select id="insert"  resultType="com.yan.model.TblAdmin">
+        insert into tbl_admin where id=#{id},username=#{username},password=#{password}
+    </select>
+
 </mapper>

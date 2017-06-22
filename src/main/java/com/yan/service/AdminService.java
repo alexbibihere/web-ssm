@@ -12,4 +12,12 @@ public interface AdminService {
     List<TblAdmin> getAllAdmin();
 
     List<TblAdmin> findAllUser();
+
+    int deleteByPrimaryKey(Long id);
+
+    int updateByPrimaryKey(TblAdmin admin);
+
+    Long insertSelective(TblAdmin admin);
+
+    TblAdmin selectByPrimaryKey(Long id);
 }
