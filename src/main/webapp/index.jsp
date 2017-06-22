@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>欢迎</title>
+    <title>我的首页</title>
 </head>
 <script>
     function r()
@@ -48,9 +48,9 @@
       密码：  <input type="password" id="password" name="password" value="1"> <br>
         <input type="submit" value="提交"  onclick="r();"/>
     </form>--%>
-<form action="user/showUser" method="post" class="div" >
+<form action="use/login" method="post" class="div" >
     用户名：   <input type="text" id="username" name="username" value="admin"> <br>
-    密码：  <input type="password" id="password" name="password" value="1"> <br>x
+    密码：  <input type="password" id="password" name="password" value="1"> <br>
     <input type="submit" value="提交"  onclick="r();"/>
 </form>
 

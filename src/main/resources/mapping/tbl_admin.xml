@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.yan.dao.AdminDao">
+<mapper namespace="com.yan.ssm.dao.AdminDao">
 
-    <resultMap id="BaseMap" type="com.yan.model.TblAdmin">
+    <resultMap id="BaseMap" type="com.yan.ssm.model.TblAdmin">
         <id column="id" property="id" jdbcType="BIGINT"/>
         <result column="username" property="username" jdbcType="VARCHAR"/>
         <result column="password" property="password" jdbcType="VARCHAR"/>
@@ -19,19 +19,19 @@
         SELECT * FROM tbl_admin
     </select>
 
-    <select id="findAllUser" resultMap="BaseMap" resultType="com.yan.model.TblAdmin">
+    <select id="findAllUser" resultMap="BaseMap" resultType="com.yan.ssm.model.TblAdmin">
         select * from tbl_admin
     </select>
 
-    <select id="deleteByPrimaryKey"  resultType="com.yan.model.TblAdmin">
+    <select id="deleteByPrimaryKey"  resultType="com.yan.ssm.model.TblAdmin">
         delete * from tbl_admin where id=#{id}
     </select>
 
-    <select id="updateByPrimaryKey"  resultType="com.yan.model.TblAdmin">
+    <select id="updateByPrimaryKey"  resultType="com.yan.ssm.model.TblAdmin">
         update   tbl_admin  set id,username,password    where id=#{id}
     </select>
 
-    <select id="insert"  resultType="com.yan.model.TblAdmin">
+    <select id="insert"  resultType="com.yan.ssm.model.TblAdmin">
         insert into tbl_admin where id=#{id},username=#{username},password=#{password}
     </select>
 

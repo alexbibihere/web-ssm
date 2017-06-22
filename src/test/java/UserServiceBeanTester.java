@@ -1,27 +1,19 @@
 import com.alibaba.fastjson.JSONObject;
-import com.yan.controller.AdminServiceBean;
-import com.yan.controller.UseServiceBean;
-import com.yan.controller.UserServiceBean;
-import com.yan.dao.AdminDao;
-import com.yan.dao.UserDao;
-import com.yan.model.TblAdmin;
-import com.yan.model.TblUser;
-import com.yan.model.User;
-import com.yan.service.UserService;
+import com.yan.ssm.controller.AdminServiceBean;
+import com.yan.ssm.controller.UseServiceBean;
+import com.yan.ssm.controller.UserServiceBean;
+import com.yan.ssm.dao.AdminDao;
+import com.yan.ssm.dao.UserDao;
+import com.yan.ssm.model.TblUser;
 import org.apache.log4j.Logger;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.ui.Model;
 
 import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
-import java.util.HashMap;
 import java.util.List;
-
-import static com.sun.webpane.platform.ConfigManager.log;
 
 /**
  * Created by yan on 2017/6/19/0019.
