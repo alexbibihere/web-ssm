@@ -16,21 +16,25 @@
 <table border="1">
     <tbody>
     <tr>
+        <th>id</th>
         <th>姓名</th>
         <th>密码</th>
     </tr>
-  <%--  <c:if test="${!empty tblAdminList }">
-        <c:forEach items="${tblAdminList}" var="list">
+   <%-- <c:if test="${!empty user }">
+        <c:forEach items="${user}" var="u">
             <tr>
-                <td>${list.username}</td>
-                <td>${list.password}</td>
+                <td>${u.id}</td>
+                <td>${u.username}</td>
+                <td>${u.password}</td>
             </tr>
         </c:forEach>
     </c:if>--%>
-   1: ${username}
-    2:${password}
 
-
+    <tr>
+        <td>${user.id}</td>
+        <td>${user.username}</td>
+        <td>${user.password}</td>
+    </tr>
     </tbody>
 </table>
 

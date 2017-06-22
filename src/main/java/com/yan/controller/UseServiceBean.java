@@ -15,7 +15,7 @@ import java.util.logging.Logger;
  * Created by yan on 2017/6/21/0021.
  */
 @Controller
-//@RequestMapping("/use")
+@RequestMapping("/use")
 public class UseServiceBean {
     private  static Logger logger = Logger.getLogger(String.valueOf(UseServiceBean.class));
 
@@ -23,15 +23,15 @@ public class UseServiceBean {
     private UseService useService;
 
     @RequestMapping("/login")
-    public  String login(@Param("user") String username, @Param("password") String password,Model model)throws Exception{
+    public String login(@Param("user") String username, @Param("password") String password,Model model)throws Exception{
 
        User user = useService.checkLogin(username,password);
         if (user!=null){
-           logger.info("123");
-            model.addAttribute(user);
-            return "login.jsp"; //登录成功 跳转到显示页
+           logger.info("登陆成功");
+           model.addAttribute("user",user);
+            return "admin"; //登录成功 跳转到显示页
         }
-        return  "fail";
+        return  null;
     }
 
 
@@ -44,11 +44,11 @@ public class UseServiceBean {
         User user=null;
         if (userId==1) {
             user = new User();
-            user.setId(1);
+            user.setId(1123);
             user.setPassword("123");
-            user.setUsername("javen");
+            user.setUsername("asddsf");
         }
         model.addAttribute("user", user);
-        return "index";
+        return "admin";
     }
 }

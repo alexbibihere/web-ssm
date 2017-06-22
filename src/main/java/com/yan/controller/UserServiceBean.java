@@ -37,8 +37,10 @@ public class UserServiceBean implements Serializable{
     @RequestMapping("/showUser")
     public String showUser(HttpServletRequest request, Model model){
         log.info("查询所有用户信息");
+
         List<TblUser> tblUserList = userService.getAllUser();
         model.addAttribute("tblUserList", tblUserList);
+
         return "showUser";
     }
 

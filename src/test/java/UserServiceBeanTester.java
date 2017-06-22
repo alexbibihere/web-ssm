@@ -71,4 +71,19 @@ public class UserServiceBeanTester {
         }
         System.out.println(JSONObject.toJSONString(user));
     }
+
+
+   /* @Test
+    public void testUse() throws Exception {
+        User u = new User();
+        u.setUsername("admin");
+        u.setPassword("1");
+        u.setId(123);
+
+         String user =  useServiceBean.login(u.getUsername(),u.getPassword());
+        // System.out.println(user.getUserName());
+            logger.info("值："+user);
+
+        System.out.println(JSONObject.toJSONString(user));
+    }*/
 }
