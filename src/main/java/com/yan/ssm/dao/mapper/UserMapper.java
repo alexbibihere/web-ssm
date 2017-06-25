@@ -7,4 +7,8 @@ import com.yan.ssm.model.User;
  */
 public interface UserMapper {
     public User getUserByName(String username);
+
+    public void addUser(User user);
+
+    Long insertSelective(String username,String password);
 }

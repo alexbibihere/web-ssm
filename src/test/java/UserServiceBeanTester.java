@@ -5,6 +5,7 @@ import com.yan.ssm.controller.UserServiceBean;
 import com.yan.ssm.dao.AdminDao;
 import com.yan.ssm.dao.UserDao;
 import com.yan.ssm.model.TblUser;
+import com.yan.ssm.model.User;
 import org.apache.log4j.Logger;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -65,15 +66,14 @@ public class UserServiceBeanTester {
     }
 
 
-   /* @Test
-    public void testUse() throws Exception {
+  /*  @Test
+    public void testAdd() throws Exception {
         User u = new User();
-        u.setUsername("admin");
-        u.setPassword("1");
-        u.setId(123);
-
-         String user =  useServiceBean.login(u.getUsername(),u.getPassword());
-        // System.out.println(user.getUserName());
+        u.setUsername("yan");
+        u.setPassword("deguang");
+         //String user =  useServiceBean.register(u.getPassword(),u.getUsername());
+        String user =  useServiceBean.register(u);
+        System.out.println(user);
             logger.info("值："+user);
 
         System.out.println(JSONObject.toJSONString(user));

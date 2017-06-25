@@ -21,7 +21,7 @@ public interface UserDao {
 
     TblUser selectByNick(@Param("username") String username);
 
-    Long insertSelective(TblUser var1);
+
 
     public TblUser getUserById(int userId);
 }
