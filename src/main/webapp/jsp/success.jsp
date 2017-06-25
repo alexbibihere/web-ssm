@@ -11,6 +11,8 @@
     <title>个人中心</title>
 </head>
 <body>
+
         <h1>恭喜你注册成功</h1>
+            <span>你的账号是：${user.username}密码是：${user.password},千万别忘记咯！</span>
 </body>
 </html>

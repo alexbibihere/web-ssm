@@ -18,6 +18,8 @@ import java.util.HashMap;
 import java.util.logging.Logger;
 
 /**
+ * 用户相关方法
+ *
  * Created by yan on 2017/6/21/0021.
  */
 @Controller
@@ -63,13 +65,14 @@ public class UseServiceBean {
     * 用户注册
     */
     @RequestMapping("/register")
-    public String register(String username,String password) {
+    public String register(String username,String password,Model model) {
         User user = new User();
         user.setUsername(username);
         user.setPassword(password);
         if (user != null) {
             useService.insertSelective(user);
         }
+        model.addAttribute("user",user);
         return "success";
     }
 }
