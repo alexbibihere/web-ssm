@@ -42,6 +42,10 @@
     <a href="jsp/showUser.jsp">跳到showUser页</a>
     <a href="jsp/welcome.jsp">跳到欢迎页</a>
     <a href="regist.jsp">跳到注册页</a>
+    <a href="user/showUser">查看用户列表</a>
+    <a href="admin/find">查看管理员列表</a>
+
+
 </div>
 
     <%--<form action="use/login" method="post" class="div" >
