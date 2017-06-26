@@ -55,7 +55,7 @@
             <input type="password" value="123"/>
         </div>
         <div style=" text-align:center;margin-top:20px">
-            <input class="button" type="button" value="登录" style="margin-right:10px; padding:5px 15px; background:#F9C; border-radius:3px; border:#F0C 1px solid;"/>
+            <input class="button" type="submit" value="登录" style="margin-right:10px; padding:5px 15px; background:#F9C; border-radius:3px; border:#F0C 1px solid;"/>
             <input class="button" type="button" value="重置" style="padding:5px 15px; background:#F9C; border-radius:3px; border:#F0C 1px solid;"/>
         </div>
     </div>

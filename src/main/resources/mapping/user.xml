@@ -16,4 +16,25 @@
         INSERT INTO tbl_user(username,password)
         values (#{username},#{password})
     </insert>
+
+    <insert id="updateSelective" parameterType="string">
+        update  tbl_user
+        set
+        username,password
+      VALUES #{username},#{password}
+      where id = #{id}
+    </insert>
+
+    <insert id="deleteById" parameterType="java.lang.String">
+       delete FROM tbl_user WHERE  id = #{id}
+    </insert>
+
+    <select id="selectByPrimaryKey" resultMap="BaseMap">
+        SELECT * FROM tbl_user where id = #{id}
+    </select>
+
+
+    <select id="selectByParams" resultMap="BaseMap">
+        SELECT * FROM tbl_user
+    </select>
 </mapper>

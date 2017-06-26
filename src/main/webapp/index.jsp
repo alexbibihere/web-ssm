@@ -35,7 +35,7 @@
     /* css注释：为了观察效果设置宽度 边框 高度等样式 */
 </style>
 <body>
-
+    <div>我的博客</div>
 <div>
     <a href="jsp/login.jsp">跳到登录页</a>
     <a href="jsp/admin.jsp">跳到管理员页</a>
@@ -67,7 +67,8 @@
             <div style="margin-left:100px;margin-top:20px">
                 <p style="display:inline">密&nbsp;码:</p>
                 <input type="password" value="1"/>
-            </div>
+            </div
+            >
             <div style=" text-align:center;margin-top:20px">
                 <input class="button" type="button" value="登录" style="margin-right:10px; padding:5px 15px; background:#F9C; border-radius:3px; border:#F0C 1px solid;"/>
                 <input class="button" type="button" value="重置" style="padding:5px 15px; background:#F9C; border-radius:3px; border:#F0C 1px solid;"/>
@@ -75,5 +76,7 @@
         </div>
     </div>
 </form>--%>
+
+
 </body>
 </html>

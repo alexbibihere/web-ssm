@@ -20,7 +20,7 @@
         <th>姓名</th>
         <th>密码</th>
     </tr>
-   <%-- <c:if test="${!empty user }">
+    <c:if test="${!empty user }">
         <c:forEach items="${user}" var="u">
             <tr>
                 <td>${u.id}</td>
@@ -28,13 +28,13 @@
                 <td>${u.password}</td>
             </tr>
         </c:forEach>
-    </c:if>--%>
+    </c:if>
 
-    <tr>
+    <<%--tr>
         <td>${user.id}</td>
         <td>${user.username}</td>
         <td>${user.password}</td>
-    </tr>
+    </tr>--%>
     </tbody>
 </table>
 

@@ -15,7 +15,8 @@
 <body>
     <c:if test="${!empty tblUserList}">
         <c:forEach var="user" items="${tblUserList}">
-            姓名：${user.userName} &nbsp;&nbsp;手机号：${user.userPwd} &nbsp;&nbsp;<br>
+            用户名：${user.userName} &nbsp;&nbsp;<br>
+            密码：${user.userPwd} &nbsp;&nbsp;<br>
         </c:forEach>
     </c:if>
 

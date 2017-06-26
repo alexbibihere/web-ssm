@@ -2,6 +2,7 @@ package com.yan.ssm.service;
 
 import com.yan.ssm.model.User;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -16,4 +17,13 @@ public interface UseService {
     public boolean addUser(Map<String,Object> map);
 
     void insertSelective(User user);
+
+    int updateSelective(User user);
+
+    int deleteById(Long id);
+
+    List<User> selectByParams (Map<String,Object>params);
+
+
+    User selectByPrimaryKey(Long id);
 }

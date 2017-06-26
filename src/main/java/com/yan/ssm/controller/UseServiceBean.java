@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.logging.Logger;
 
 /**
@@ -71,5 +73,30 @@ public class UseServiceBean {
             useService.insertSelective(user);
         }
         return "success";
+    }
+
+    /*
+   * 用户删除
+   */
+    @RequestMapping("/delete")
+    public String deleteUser(Long id,Model model) {
+       User user= useService.selectByPrimaryKey(id);
+        useService.deleteById(id);
+        model.addAttribute("user",user);
+        return "info";
+    }
+
+    /**
+     * 查询用户列表
+     *
+     * @param model
+     * @return
+     */
+    @RequestMapping("/select")
+    public String getUsers(Model model) {
+        Map<String,Object> params= new HashMap<String,Object>();
+        List<User> user= useService.selectByParams(params);
+        model.addAttribute("user",user);
+        return "admin";
     }
 }

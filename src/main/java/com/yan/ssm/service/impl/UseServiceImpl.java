@@ -7,6 +7,8 @@ import com.yan.ssm.service.UseService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -33,10 +35,8 @@ public class UseServiceImpl implements UseService {
         String username = (String) map.get("username");
         User finduser = uDao.findUserByName(username);
         if (finduser == null) {
-
             user.setUsername(username);
             user.setPassword((String) map.get("password"));
-
             uDao.addUser(user);
             System.out.println("添加成功");
             reslut = true;
@@ -54,5 +54,30 @@ public class UseServiceImpl implements UseService {
     public Long insertSelective(TblUser record) {
         Object newKey = insertSelective(record);
         return (Long) newKey;
+    }
+
+     public   int updateSelective(User user){
+        int rows = uDao.updateSelective(user);
+         System.out.println("更新成功");
+        return rows;
+     }
+
+
+    public int deleteById(Long id){
+        int rows = uDao.deleteById(id);
+        System.out.println("删除成功");
+        return rows;
+    }
+
+    public List<User> selectByParams (Map<String, Object> params){
+        List<User> userList =  uDao.selectByParams(params);
+        System.out.println("根据参数查询成功");
+        return userList;
+    }
+
+    public  User  selectByPrimaryKey(Long id){
+        User user=    uDao.selectByPrimaryKey(id);
+        System.out.println("根据id查询成功");
+        return  user;
     }
 }
