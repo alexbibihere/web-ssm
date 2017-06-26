@@ -55,7 +55,7 @@ public class UserServiceBeanTester {
         System.out.println(JSONObject.toJSONString(admins));
     }*/
 
-    @Test
+    /*@Test
     public void test1() {
         List<TblUser> user =  userServiceBean.getAllUser();
         // System.out.println(user.getUserName());
@@ -63,7 +63,7 @@ public class UserServiceBeanTester {
          logger.info("值："+tblUser+user);
         }
         System.out.println(JSONObject.toJSONString(user));
-    }
+    }*/
 
 
   /*  @Test

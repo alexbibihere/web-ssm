@@ -63,10 +63,7 @@ public class UserServiceBean implements Serializable{
 
 
 
-    public List<TblUser> getAllUser() {
-        List<TblUser> tblUsers = userService.getAllUser();
-        return tblUsers;
-    }
+
 
 
 }

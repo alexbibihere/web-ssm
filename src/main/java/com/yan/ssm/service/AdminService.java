@@ -20,4 +20,6 @@ public interface AdminService {
     Long insertSelective(TblAdmin admin);
 
     TblAdmin selectByPrimaryKey(Long id);
+
+    TblAdmin selectByNick(String nick);
 }

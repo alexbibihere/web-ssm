@@ -13,32 +13,33 @@
     <title>管理员列表</title>
 </head>
 <body>
+<h1>欢迎来到管理员后台</h1>
 <table border="1">
     <tbody>
     <tr>
         <th>id</th>
         <th>姓名</th>
         <th>密码</th>
+        <th>年龄</th>
     </tr>
+
+
     <c:if test="${!empty user }">
         <c:forEach items="${user}" var="u">
             <tr>
                 <td>${u.id}</td>
                 <td>${u.username}</td>
                 <td>${u.password}</td>
+                <td>${u.age}</td>
             </tr>
         </c:forEach>
     </c:if>
 
-    <<%--tr>
-        <td>${user.id}</td>
-        <td>${user.username}</td>
-        <td>${user.password}</td>
-    </tr>--%>
+
     </tbody>
 </table>
 
 
-<h1>12</h1>
+
 </body>
 </html>

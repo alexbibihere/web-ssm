@@ -21,4 +21,6 @@ public interface AdminDao {
     Long insertSelective(TblAdmin admin);
 
     TblAdmin selectByPrimaryKey(Long id);
+
+    TblAdmin selectByNick(String nick);
 }

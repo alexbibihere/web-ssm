@@ -54,4 +54,11 @@ public class AdminServiceImpl implements AdminService{
         TblAdmin  admin = adminDao.selectByPrimaryKey(id);
         return  admin;
     }
+
+    public   TblAdmin selectByNick(String nick){
+        TblAdmin  admin = adminDao.selectByNick(nick);
+        return  admin;
+    }
+
+
 }

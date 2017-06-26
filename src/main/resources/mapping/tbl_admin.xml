@@ -14,8 +14,12 @@
         WHERE id = #{Id}
     </select>
 
+    <select id="selectByNick" parameterType="java.lang.String" resultMap="BaseMap">
+        SELECT * FROM tbl_admin
+        WHERE username = #{username}
+    </select>
 
-    <select id="selectAllAdmin" resultMap="BaseMap">
+    <select id="selectAllAdmin" resultMap="BaseMap" resultType="com.yan.ssm.model.TblAdmin">
         SELECT * FROM tbl_admin
     </select>
 
