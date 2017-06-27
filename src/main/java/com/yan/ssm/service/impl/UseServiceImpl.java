@@ -20,7 +20,7 @@ public class UseServiceImpl implements UseService {
     private UDao uDao;
 
     public User checkLogin(String username, String password) {
-        User user = uDao.findUserByName(username);
+        User user = uDao.selectByNick(username);
         if (user != null && user.getPassword().equals(password)) {
             return user;
         }
@@ -33,7 +33,7 @@ public class UseServiceImpl implements UseService {
         boolean reslut;
         User user = new User();
         String username = (String) map.get("username");
-        User finduser = uDao.findUserByName(username);
+        User finduser = uDao.selectByNick(username);
         if (finduser == null) {
             user.setUsername(username);
             user.setPassword((String) map.get("password"));
@@ -51,10 +51,10 @@ public class UseServiceImpl implements UseService {
         System.out.println("注册成功");
     }
 
-    public Long insertSelective(TblUser record) {
+  /*  public Long insertSelective(TblUser record) {
         Object newKey = insertSelective(record);
         return (Long) newKey;
-    }
+    }*/
 
      public   int updateSelective(User user){
         int rows = uDao.updateSelective(user);
@@ -63,7 +63,7 @@ public class UseServiceImpl implements UseService {
      }
 
 
-    public int deleteById(Long id){
+    public int deleteById(int id){
         int rows = uDao.deleteById(id);
         System.out.println("删除成功");
         return rows;
@@ -75,7 +75,7 @@ public class UseServiceImpl implements UseService {
         return userList;
     }
 
-    public  User  selectByPrimaryKey(Long id){
+    public  User  selectByPrimaryKey(int id){
         User user=    uDao.selectByPrimaryKey(id);
         System.out.println("根据id查询成功");
         return  user;

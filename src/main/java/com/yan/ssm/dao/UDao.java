@@ -13,7 +13,7 @@ import java.util.Map;
  */
 @Repository
 public interface UDao {
-    public User findUserByName(String username);
+    //public User findUserByName(String username);
 
     public void addUser(User user);
 
@@ -21,11 +21,11 @@ public interface UDao {
 
     int updateSelective(User user);
 
-    int deleteById(Long id);
+    int deleteById(int id);
 
     List<User> selectByParams (Map<String,Object>params);
 
-    User selectByPrimaryKey(Long id);
+    User selectByPrimaryKey(int id);
 
     User selectByNick(@Param("username") String username);
 }

@@ -20,12 +20,12 @@ public interface UseService {
 
     int updateSelective(User user);
 
-    int deleteById(Long id);
+    int deleteById(int id);
 
     List<User> selectByParams (Map<String,Object>params);
 
 
-    User selectByPrimaryKey(Long id);
+    User selectByPrimaryKey(int id);
 
     User selectByNick(String username) ;
 }

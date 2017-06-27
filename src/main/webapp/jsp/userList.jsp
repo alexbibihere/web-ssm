@@ -22,6 +22,19 @@
         }
         /* css注释：为了观察效果设置宽度 边框 高度等样式 */
     </style>
+    <script type="text/javascript">
+        function del(id){
+            $.get("<%=basePath%>admin/delete?id=" + id,function(data){
+                /*if("success" == data.result){
+                 alert("删除成功");
+                 window.location.reload();
+                 }else{
+                 alert("删除失败");
+                 }*/alert("helo");
+            });
+        }
+
+    </script>
 </head>
 <body>
 <table border="1" class="c">
@@ -39,8 +52,9 @@
             <td>${u.username}</td>
             <td>${u.password}</td>
             <td>
-                <a href="#">编辑</a>
-                <a href="#')">删除</a>
+                <a href="${pageContext.request.contextPath}/use/update?id=${u.id}">编辑</a>
+                <%--<a href="javascript:del('${u.id }')">删除</a>--%>
+                <a href="${pageContext.request.contextPath}/use/delete?id=${u.id}"> 删除</a>
             </td>
         </tr>
     </c:forEach>

@@ -11,6 +11,11 @@
     <title>个人信息</title>
 </head>
 <body>
-
+<h1>你刚刚删除的用户信息是</h1>
+<tr>
+    <td>user.id</td>
+    <td>user.username</td>
+    <td>user.password</td>
+</tr>
 </body>
 </html>

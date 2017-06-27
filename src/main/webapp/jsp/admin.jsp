@@ -91,7 +91,7 @@
                 <td>${u.password}</td>
                 <td>${u.age}</td>
                 <td id="qw">
-                    <a href="${pageContext.request.contextPath}/user/update?id=${u.id}">编辑</a>
+                    <a href="${pageContext.request.contextPath}user/update?id=${u.id}">编辑</a>
                     <a href="javascript:del('${u.id }')">删除</a>
             <%--<button onclick="del()" class="btn">删除</button>--%>
                  <%--   <a href="${pageContext.request.contextPath/user?method=delete?id=${u.id}}" onclick="del">删除</a>--%>
