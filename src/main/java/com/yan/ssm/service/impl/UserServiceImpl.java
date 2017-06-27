@@ -27,16 +27,6 @@ public class UserServiceImpl implements UserService {
     public TblUser getUserByPhoneOrEmail(String emailOrPhone, Short state) {
         return userDao.selectUserByPhoneOrEmail(emailOrPhone,state);
     }
-    
-    /*public List<TblUser> getAllUser() {
-        return userDao.selectAllUser();
-    }*/
-
-   /* public List<TblUser> getAllUser() {
-        // TODO Auto-generated method stub
-        List<TblUser> findAllUser = userDao.selectAllUser();
-        return findAllUser;
-    }*/
 
     public List<TblUser> getAllUser() {
         List<TblUser> tblUsers =userDao.selectAllUser();
@@ -53,9 +43,14 @@ public class UserServiceImpl implements UserService {
         return (Long) newKey;
     }
 
+    public int updateByPrimaryKey(TblUser user){
+        int id=userDao.updateByPrimaryKey(user);
+        return id;
+    }
 
-    public TblUser getUserById(int userId) {
-        // TODO Auto-generated method stub
-        return this.userDao.selectByNick(String.valueOf(userId));
+    public  int  deleteById(Long id){
+      int rows =  userDao.deleteById(id);
+      System.out.println("删除了"+rows);
+        return rows;
     }
 }

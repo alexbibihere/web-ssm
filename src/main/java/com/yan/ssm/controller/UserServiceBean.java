@@ -24,13 +24,6 @@ public class UserServiceBean implements Serializable{
     @Autowired
     private UserService userService;
 
-   /* @RequestMapping("/showUser")
-    public String showUser(HttpServletRequest request, Model model){
-        log.info("查询所有用户信息");
-        List<User> userList = userService.getAllUser();
-        model.addAttribute("userList",userList);
-        return "showUser";
-    }*/
 
 
     @RequestMapping("/showUser")
@@ -61,7 +54,13 @@ public class UserServiceBean implements Serializable{
         return "login";
     }
 
-
+    @RequestMapping("/delete")
+    public String deleteUser(Long id){
+       TblUser user =  userService.getUserById(id);
+        System.out.println("删除了"+user);
+        userService.deleteById(id);
+        return "admin";
+    }
 
 
 

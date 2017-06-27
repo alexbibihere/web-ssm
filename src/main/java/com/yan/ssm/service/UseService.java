@@ -26,4 +26,6 @@ public interface UseService {
 
 
     User selectByPrimaryKey(Long id);
+
+    User selectByNick(String username) ;
 }

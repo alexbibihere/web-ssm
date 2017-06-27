@@ -15,11 +15,11 @@ public interface UserService {
 
     TblUser getUserById(Long userId);
 
-    //TblUser selectByNick(String var1);
-
     Long insertSelective(TblUser var1);
 
     String selectByNick() throws  Exception;
 
-    public TblUser getUserById(int userId);
+    int updateByPrimaryKey (TblUser user);
+
+    int deleteById(Long id);
 }

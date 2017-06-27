@@ -11,6 +11,6 @@
     <title>404</title>
 </head>
 <body>
-<h1>error</h1>
+<h1>error</h1> <a  href="../index.jsp">返回首页</a>
 </body>
 </html>

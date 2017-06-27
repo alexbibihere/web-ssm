@@ -26,4 +26,6 @@ public interface UDao {
     List<User> selectByParams (Map<String,Object>params);
 
     User selectByPrimaryKey(Long id);
+
+    User selectByNick(@Param("username") String username);
 }

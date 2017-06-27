@@ -35,15 +35,16 @@
     /* css注释：为了观察效果设置宽度 边框 高度等样式 */
 </style>
 <body>
-    <div>我的博客</div>
+    <h1>我的博客</h1>
 <div>
-    <a href="jsp/login.jsp">跳到登录页</a>
+    <a href="jsp/login1.jsp">跳到登录页</a>
     <a href="jsp/admin.jsp">跳到管理员页</a>
     <a href="jsp/showUser.jsp">跳到showUser页</a>
     <a href="jsp/welcome.jsp">跳到欢迎页</a>
     <a href="regist.jsp">跳到注册页</a>
     <a href="user/showUser">查看用户列表</a>
-    <a href="admin/find">查看管理员列表</a>
+    <a href="admin/getUser">查看管理员列表</a>
+    <a href="jsp/login.jsp">登录</a>
 
 
 </div>

@@ -1,6 +1,7 @@
 package com.yan.ssm.controller;
 
 import com.yan.ssm.dao.UDao;
+import com.yan.ssm.model.TblAdmin;
 import com.yan.ssm.model.User;
 import com.yan.ssm.service.UseService;
 import org.apache.ibatis.annotations.Param;
@@ -71,11 +72,13 @@ public class UseServiceBean {
         User user = new User();
         user.setUsername(username);
         user.setPassword(password);
-        if (user != null) {
+        User u= useService.selectByNick(username);
+        if (u == null) {
             useService.insertSelective(user);
+            return "success";
         }
         model.addAttribute("user",user);
-        return "success";
+        return "fail";
     }
 
     /*
@@ -100,6 +103,6 @@ public class UseServiceBean {
         Map<String,Object> params= new HashMap<String,Object>();
         List<User> user= useService.selectByParams(params);
         model.addAttribute("user",user);
-        return "admin";
+        return "userList";
     }
 }

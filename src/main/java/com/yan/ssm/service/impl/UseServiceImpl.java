@@ -80,4 +80,10 @@ public class UseServiceImpl implements UseService {
         System.out.println("根据id查询成功");
         return  user;
     }
+
+
+
+    public User selectByNick(String username) {
+       return uDao.selectByNick(username);
+    }
 }

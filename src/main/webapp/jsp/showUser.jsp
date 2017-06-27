@@ -13,13 +13,21 @@
     <title>用户信息列表</title>
 </head>
 <body>
-    <c:if test="${!empty tblUserList}">
-        <c:forEach var="user" items="${tblUserList}">
+
+<tr>
+    <th>用户名</th>
+    <th>密码</th>
+</tr>
+
+<c:if test="${!empty tblUserList}">
+    <c:forEach var="user" items="${tblUserList}">
+        <tr>
             用户名：${user.userName} &nbsp;&nbsp;<br>
             密码：${user.userPwd} &nbsp;&nbsp;<br>
-        </c:forEach>
-    </c:if>
+        </tr>
+    </c:forEach>
+</c:if>
 
-<h1>12</h1>
+
 </body>
 </html>

@@ -8,8 +8,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.io.Serializable;
 import java.util.List;
 
@@ -38,18 +43,34 @@ public class AdminServiceBean implements Serializable {
     }
 
 
-    @RequestMapping("/find")
+    @RequestMapping("/getUser")
     public String getAllUser(HttpServletRequest request, Model model) {
         List<TblAdmin> user = adminService.findAllUser();
         model.addAttribute("user", user);
-        return "admin";
+        request.setAttribute("user",user);
+        return "/admin";
     }
 
-    @RequestMapping("delete")
-    public String deleteAdmin(Long id) {
+    @ResponseBody
+    @RequestMapping("/delete")
+    public void deleteAdmin(Long id,HttpServletRequest request, HttpServletResponse response) {
+        String result = "{\"result\":\"error\"}";
+        if (adminService.deleteByPrimaryKey(id) > 0) {
+            result = "{\"result\":\"success\"}";
+        }
+        response.setContentType("application/json");
+        try {
+            PrintWriter out = response.getWriter();
+            out.write(result);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+/*
+        TblAdmin  admin= adminService.selectByPrimaryKey(id);
         adminService.deleteByPrimaryKey(id);
-        System.out.println("删除成功");
-        return "admin";
+        System.out.println("删除"+admin+"成功");
+        model.addAttribute("admin",admin);
+        return "success";*/
     }
 
 
@@ -62,11 +83,13 @@ public class AdminServiceBean implements Serializable {
         return "admin";
     }
 
-
     @RequestMapping("update")
-    public String updateAdmin(TblAdmin admin) {
+    public String updateAdmin(TblAdmin admin,HttpServletRequest request, Model model) {
         adminService.updateByPrimaryKey(admin);
+        TblAdmin tblAdmin = adminService.selectByPrimaryKey(admin.getId());
         System.out.println("修改成功");
+        request.setAttribute("tblAdmin",tblAdmin);
+        model.addAttribute("tblAdmin",tblAdmin);
         return "admin";
     }
 }
