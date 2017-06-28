@@ -35,6 +35,7 @@
     </style>
 </head>
 <body>
+<h1>注册</h1>
 <form action="${pageContext.request.contextPath}use/register" method="post" class="div" >
     用户名：   <input type="text" id="username" name="username" value="admin"> <br>
     密码：  <input type="password" id="password" name="password" value="1"> <br>

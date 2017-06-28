@@ -83,16 +83,19 @@
         <th>年龄</th>
     </tr>
 
-    <c:if test="${!empty user }">
-        <c:forEach items="${user}" var="u">
+    <c:if test="${!empty adminList }">
+        <c:forEach items="${adminList}" var="u">
             <tr>
                 <td>${u.id}</td>
                 <td>${u.username}</td>
                 <td>${u.password}</td>
                 <td>${u.age}</td>
                 <td id="qw">
-                    <a href="${pageContext.request.contextPath}user/update?id=${u.id}">编辑</a>
-                    <a href="javascript:del('${u.id }')">删除</a>
+                    <%--<a href="${pageContext.request.contextPath}user/update?id=${u.id}">编辑</a>
+                    <a href="javascript:del('${u.id }')">删除</a>--%>
+                    <a href="${pageContext.request.contextPath}/admin/getUser?id=${u.id}">编辑</a>
+                        <%--<a href="javascript:del('${u.id }')">删除</a>--%>
+                    <a href="${pageContext.request.contextPath}/admin/delete?id=${u.id}"> 删除</a>
             <%--<button onclick="del()" class="btn">删除</button>--%>
                  <%--   <a href="${pageContext.request.contextPath/user?method=delete?id=${u.id}}" onclick="del">删除</a>--%>
                 </td>

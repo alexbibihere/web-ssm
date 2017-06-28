@@ -4,16 +4,16 @@ package com.yan.ssm.model;
  * Created by yan on 2017/6/20/0020.
  */
 public class TblAdmin {
-    private  long id;
+    private  int id;
     private String username;
     private String age;
     private  String password;
 
-    public long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 

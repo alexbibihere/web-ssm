@@ -1,6 +1,5 @@
 package com.yan.ssm.dao;
 
-import com.yan.ssm.model.TblUser;
 import com.yan.ssm.model.User;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
@@ -14,6 +13,8 @@ import java.util.Map;
 @Repository
 public interface UDao {
     //public User findUserByName(String username);
+
+    public User checkLogin(String username, String password);
 
     public void addUser(User user);
 

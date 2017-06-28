@@ -22,6 +22,7 @@ public class UseServiceImpl implements UseService {
     public User checkLogin(String username, String password) {
         User user = uDao.selectByNick(username);
         if (user != null && user.getPassword().equals(password)) {
+            System.out.println("用户密码正确：checkLogin");
             return user;
         }
         return null;
@@ -38,7 +39,7 @@ public class UseServiceImpl implements UseService {
             user.setUsername(username);
             user.setPassword((String) map.get("password"));
             uDao.addUser(user);
-            System.out.println("添加成功");
+            System.out.println("添加成功:addUser");
             reslut = true;
         } else {
             reslut = false;
@@ -48,7 +49,8 @@ public class UseServiceImpl implements UseService {
 
     public void insertSelective(User user) {
         uDao.insertSelective(user);
-        System.out.println("注册成功");
+        System.out.println("注册成功:insertSelective");
+        return;
     }
 
   /*  public Long insertSelective(TblUser record) {
@@ -58,26 +60,33 @@ public class UseServiceImpl implements UseService {
 
      public   int updateSelective(User user){
         int rows = uDao.updateSelective(user);
-         System.out.println("更新成功");
+         if (rows>0) {
+             System.out.println("更新成功:updateSelective");
+         }
         return rows;
      }
 
 
     public int deleteById(int id){
         int rows = uDao.deleteById(id);
-        System.out.println("删除成功");
+        if (rows>0) {
+            System.out.println("删除成功");
+        }
+        System.out.println("删除成功:deleteById");
         return rows;
     }
 
+
+
     public List<User> selectByParams (Map<String, Object> params){
         List<User> userList =  uDao.selectByParams(params);
-        System.out.println("根据参数查询成功");
+        System.out.println("根据参数查询成功:selectByParams");
         return userList;
     }
 
     public  User  selectByPrimaryKey(int id){
         User user=    uDao.selectByPrimaryKey(id);
-        System.out.println("根据id查询成功");
+        System.out.println("根据id查询成功:selectByPrimaryKey");
         return  user;
     }
 

@@ -12,22 +12,23 @@
         SELECT  * FROM  tbl_user where username = #{username}
     </select>
 
-    <insert id="insertSelective" parameterType="string">
+    <insert id="insertSelective" parameterType="com.yan.ssm.model.User">
         INSERT INTO tbl_user(username,password)
         values (#{username},#{password})
     </insert>
 
-    <insert id="updateSelective" parameterType="string">
+    <update id="updateSelective" parameterType="com.yan.ssm.model.User">
         update  tbl_user
         set
         username,password
       VALUES #{username},#{password}
       where id = #{id}
-    </insert>
+    </update>
 
-    <insert id="deleteById" parameterType="java.lang.String">
+    <delete id="deleteById" parameterType="int">
        delete FROM tbl_user WHERE  id = #{id}
-    </insert>
+    </delete>
+
 
     <select id="selectByPrimaryKey" resultMap="BaseMap">
         SELECT * FROM tbl_user where id = #{id}

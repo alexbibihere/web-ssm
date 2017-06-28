@@ -7,7 +7,7 @@ import java.util.Date;
  */
 public class TblUser {
 
-    private Long id;
+    private int id;
     private String userName;
     private String userPhone;
     private String userEmail;
@@ -17,11 +17,11 @@ public class TblUser {
     private Date modifyTime;
     private Short isDelete;
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 

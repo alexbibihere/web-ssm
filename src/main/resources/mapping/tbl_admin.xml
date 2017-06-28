@@ -9,34 +9,37 @@
         <result property="age" column="user_age" jdbcType="VARCHAR"/>
     </resultMap>
 
-    <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseMap">
+    <select id="selectByPrimaryKey" parameterType="com.yan.ssm.model.TblAdmin" resultMap="BaseMap">
         SELECT * FROM tbl_admin
         WHERE id = #{Id}
     </select>
 
-    <select id="selectByNick" parameterType="java.lang.String" resultMap="BaseMap">
+    <select id="selectByNick" parameterType="com.yan.ssm.model.TblAdmin" resultMap="BaseMap">
         SELECT * FROM tbl_admin
         WHERE username = #{username}
     </select>
 
-    <select id="selectAllAdmin" resultMap="BaseMap" resultType="com.yan.ssm.model.TblAdmin">
-        SELECT * FROM tbl_admin
-    </select>
+
 
     <select id="findAllUser" resultMap="BaseMap" resultType="com.yan.ssm.model.TblAdmin">
         select * from tbl_admin
     </select>
 
-    <select id="deleteByPrimaryKey"  resultType="com.yan.ssm.model.TblAdmin">
-        delete * from tbl_admin where id=#{id}
-    </select>
 
-    <select id="updateByPrimaryKey"  resultType="com.yan.ssm.model.TblAdmin">
-        update   tbl_admin  set id,username,password    where id=#{id}
-    </select>
 
-    <select id="insert"  resultType="com.yan.ssm.model.TblAdmin">
+    <delete id="deleteByPrimaryKey" parameterType="int">
+        delete from tbl_admin where id = #{id}
+    </delete>
+
+    <update id="updateByPrimaryKey"  parameterType="com.yan.ssm.model.TblAdmin">
+        update   tbl_admin  set username=#{username},password=#{password}   where id=#{id}
+    </update>
+
+    <insert id="insert"  parameterType="com.yan.ssm.model.TblAdmin">
         insert into tbl_admin where id=#{id},username=#{username},password=#{password}
-    </select>
+    </insert>
 
+    <select id="selectByParams" resultMap="BaseMap">
+        SELECT * FROM tbl_admin
+    </select>
 </mapper>

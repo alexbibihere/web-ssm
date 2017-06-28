@@ -24,7 +24,7 @@
         SELECT * FROM t_user
     </select>
 
-    <select id="updateByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseMap">
+    <update id="updateByPrimaryKey" parameterType="java.lang.Long">
         update t_user
         <set>
             <if test="userName!=null and userName!='' ">
@@ -35,13 +35,13 @@
             </if>
         </set>
         where id=#{id}
-    </select>
+    </update>
 
     <select id="selectByPrimaryKey"  resultType="com.yan.ssm.model.TblAdmin">
         select * from    t_user   where id=#{id}
     </select>
 
-    <delete id="deleteUser" parameterType="Integer">
+    <delete id="deleteUser" parameterType="int">
         delete from t_user
         where id=#{id}
     </delete>

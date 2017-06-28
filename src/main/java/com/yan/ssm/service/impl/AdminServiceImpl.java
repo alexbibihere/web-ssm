@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by yan on 2017/6/20/0020.
@@ -22,10 +23,6 @@ public class AdminServiceImpl implements AdminService{
         this.adminDao = adminDao;
     }
 
-    public List<TblAdmin> getAllAdmin() {
-        return adminDao.selectAllAdmin();
-    }
-
 
     public List<TblAdmin> findAllUser() {
         // TODO Auto-generated method stub
@@ -33,10 +30,11 @@ public class AdminServiceImpl implements AdminService{
         return findAllUser;
     }
 
-    public int deleteByPrimaryKey(Long id) {
-        TblAdmin key = new TblAdmin();
-        key.setId(id);
+    public int deleteByPrimaryKey(int id) {
         int rows = adminDao.deleteByPrimaryKey(id);
+        if (rows>0) {
+            System.out.println("删除成功:deleteById");
+        }
         return  rows;
     }
 
@@ -45,12 +43,28 @@ public class AdminServiceImpl implements AdminService{
         return rows;
     }
 
-    public Long insertSelective(TblAdmin admin){
-    Long id= adminDao.insertSelective(admin);
+    public TblAdmin checkLogin(String username, String password) {
+        TblAdmin admin = adminDao.selectByNick(username);
+        if (admin != null && admin.getPassword().equals(password)) {
+            System.out.println("用户密码正确：checkLogin");
+            return admin;
+        }
+        return null;
+    }
+
+    public List<TblAdmin> selectByParams (Map<String, Object> params){
+        List<TblAdmin> adminList =  adminDao.selectByParams(params);
+        System.out.println("根据参数查询成功:selectByParams");
+        return adminList;
+    }
+
+    public int insertSelective(TblAdmin admin){
+    int id= adminDao.insertSelective(admin);
       return id;
     }
 
-    public   TblAdmin selectByPrimaryKey(Long id){
+
+    public   TblAdmin selectByPrimaryKey(int id){
         TblAdmin  admin = adminDao.selectByPrimaryKey(id);
         return  admin;
     }

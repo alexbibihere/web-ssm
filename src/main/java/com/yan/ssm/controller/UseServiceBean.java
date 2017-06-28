@@ -1,10 +1,8 @@
 package com.yan.ssm.controller;
 
-import com.yan.ssm.dao.UDao;
 import com.yan.ssm.model.User;
 import com.yan.ssm.service.UseService;
 import org.apache.ibatis.annotations.Param;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,21 +16,19 @@ import java.util.logging.Logger;
 
 /**
  * 用户相关方法
- * <p>
  * Created by yan on 2017/6/21/0021.
  */
 @Controller
 @RequestMapping("/use")
 public class UseServiceBean {
     private static Logger logger = Logger.getLogger(String.valueOf(UseServiceBean.class));
-    @Autowired
-    private UDao uDao;
     @Resource
     private UseService useService;
 
     @RequestMapping("/login")
     public String login(@Param("user") String username, @Param("password") String password, Model model) throws Exception {
         Map<String, Object> params = new HashMap<String, Object>();
+        // 检查用户是否注册 如果注册，允许登录跳转
         useService.checkLogin(username, password);
         List<User> user = useService.selectByParams(params);
         if (user != null) {
@@ -43,24 +39,7 @@ public class UseServiceBean {
         return null;
     }
 
-
-    // /user/test?id=1
-    @RequestMapping("/test")
-    public String test(HttpServletRequest request, Model model) {
-        int userId = Integer.parseInt(request.getParameter("id"));
-        System.out.println("userId:" + userId);
-        User user = null;
-        if (userId == 1) {
-            user = new User();
-            user.setId(4);
-            user.setPassword("123");
-            user.setUsername("asddsf");
-        }
-        model.addAttribute("user", user);
-        return "admin";
-    }
-
-    /*
+    /**
     * 用户注册
     */
     @RequestMapping("/register")
@@ -77,23 +56,22 @@ public class UseServiceBean {
         return "fail";
     }
 
-    /*
-   * 用户删除
-   */
+    /**
+     * 用户删除
+     */
     @RequestMapping("/delete")
-    public String deleteUser(HttpServletRequest request, Model model) {
-        String username = request.getParameter("username");
-        User user = useService.selectByNick(username);
-        useService.deleteById(user.getId());
+    public String deleteUser(int id,HttpServletRequest request, Model model) {
+        //String id = request.getParameter("id");
+        System.out.println(id);
+        User user =useService.selectByPrimaryKey(id);
+         //useService.selectByNick(username);
+        useService.deleteById(id);
         model.addAttribute("user", user);
         return "info";
     }
 
     /**
      * 查询用户列表
-     *
-     * @param model
-     * @return
      */
     @RequestMapping("/select")
     public String getUsers(Model model) {
@@ -103,6 +81,10 @@ public class UseServiceBean {
         return "userList";
     }
 
+    /**
+     * 修改用户信息
+     *
+     */
     @RequestMapping("/update")
     public String updateAdmin(User user,HttpServletRequest request, Model model) {
         useService.updateSelective(user);
