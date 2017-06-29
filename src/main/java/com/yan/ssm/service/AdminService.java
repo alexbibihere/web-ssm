@@ -1,6 +1,6 @@
 package com.yan.ssm.service;
 
-import com.yan.ssm.model.TblAdmin;
+import com.yan.ssm.model.Admin;
 
 import java.util.List;
 import java.util.Map;
@@ -10,19 +10,19 @@ import java.util.Map;
  */
 public interface AdminService {
 
-    TblAdmin checkLogin(String username, String password);
+    Admin checkLogin(String username, String password);
 
-    List<TblAdmin> findAllUser();
+    List<Admin> findAllUser();
 
     int deleteByPrimaryKey(int id);
 
-    int updateByPrimaryKey(TblAdmin admin);
+    int updateByPrimaryKey(Admin admin);
 
-    int insertSelective(TblAdmin admin);
+    int insertSelective(Admin admin);
 
-    TblAdmin selectByPrimaryKey(int id);
+    Admin selectByPrimaryKey(int id);
 
-    List<TblAdmin> selectByParams (Map<String,Object> params);
+    List<Admin> selectByParams (Map<String,Object> params);
 
-    TblAdmin selectByNick(String nick);
+    Admin selectByNick(String nick);
 }

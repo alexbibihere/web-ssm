@@ -33,10 +33,11 @@
 
     .div {
         position: absolute;
+        margin: auto;
         top: 50%;
         left: 50%;
-        margin-top: -100px;
-        margin-left: -200px;
+      /*  margin-top: -100px;
+        margin-left: -200px;*/
         background: #69F;
         width: 400px;
         height: 200px;
@@ -53,12 +54,12 @@
 <div class="nav">
 
     <a href="jsp/welcome.jsp">跳到欢迎页</a>
-    <a href="user/showUser">查看用户列表</a>
-    <a href="admin/getAllUser">查看管理员列表</a>
+    <a href="user/getAllUser">查看用户列表</a>
+    <a href="admin/getAllAdmin">查看管理员列表</a>
     <a href="jsp/login.jsp">登录</a>
     <a href="regist.jsp">跳到注册页</a>
 </div>
-<form action="${pageContext.request.contextPath}/use/login" method="post" class="div">
+<form action="${pageContext.request.contextPath}/user/login" method="post" class="div">
     用户名： <input type="text" id="username" name="username" value="admin"> <br>
     密码： <input type="password" id="password" name="password" value="1"> <br>
     <input type="submit" value="提交" onclick="r();"/>

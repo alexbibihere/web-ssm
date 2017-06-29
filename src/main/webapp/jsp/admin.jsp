@@ -93,7 +93,7 @@
                 <td id="qw">
                     <%--<a href="${pageContext.request.contextPath}user/update?id=${u.id}">编辑</a>
                     <a href="javascript:del('${u.id }')">删除</a>--%>
-                    <a href="${pageContext.request.contextPath}/admin/getUser?id=${u.id}">编辑</a>
+                    <a href="${pageContext.request.contextPath}/admin/getAdmin?id=${u.id}">修改</a>
                         <%--<a href="javascript:del('${u.id }')">删除</a>--%>
                     <a href="${pageContext.request.contextPath}/admin/delete?id=${u.id}"> 删除</a>
             <%--<button onclick="del()" class="btn">删除</button>--%>

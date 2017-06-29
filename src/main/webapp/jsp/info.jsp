@@ -18,6 +18,6 @@
     <td>${user.password}</td>
 </tr>
 
-<a href="${pageContext.request.contextPath}/use/select">返回用户列表</a>
+<a href="${pageContext.request.contextPath}/user/getUsers">返回用户列表</a>
 </body>
 </html>

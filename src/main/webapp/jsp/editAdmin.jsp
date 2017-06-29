@@ -16,7 +16,7 @@
     </style>
 </head>
 <body>
-<h1>更新用户信息</h1>
+<h1>更新管理员信息</h1>
 <form action="${pageContext.request.contextPath}/admin/update" method="post" class="div" >
     <input type="hidden" name="id" value="${user.id}">
     用户名：   <input type="text"  name="username" value="${user.username}"> <br>

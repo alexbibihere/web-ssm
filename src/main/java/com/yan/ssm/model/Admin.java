@@ -3,7 +3,7 @@ package com.yan.ssm.model;
 /**
  * Created by yan on 2017/6/20/0020.
  */
-public class TblAdmin {
+public class Admin {
     private  int id;
     private String username;
     private String age;

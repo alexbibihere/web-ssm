@@ -2,26 +2,26 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.yan.ssm.dao.AdminDao">
 
-    <resultMap id="BaseMap" type="com.yan.ssm.model.TblAdmin">
+    <resultMap id="BaseMap" type="com.yan.ssm.model.Admin">
         <id column="id" property="id" jdbcType="BIGINT"/>
         <result column="username" property="username" jdbcType="VARCHAR"/>
         <result column="password" property="password" jdbcType="VARCHAR"/>
         <result property="age" column="user_age" jdbcType="VARCHAR"/>
     </resultMap>
 
-    <select id="selectByPrimaryKey" parameterType="com.yan.ssm.model.TblAdmin" resultMap="BaseMap">
+    <select id="selectByPrimaryKey" parameterType="com.yan.ssm.model.Admin" resultMap="BaseMap">
         SELECT * FROM tbl_admin
         WHERE id = #{Id}
     </select>
 
-    <select id="selectByNick" parameterType="com.yan.ssm.model.TblAdmin" resultMap="BaseMap">
+    <select id="selectByNick" parameterType="com.yan.ssm.model.Admin" resultMap="BaseMap">
         SELECT * FROM tbl_admin
         WHERE username = #{username}
     </select>
 
 
 
-    <select id="findAllUser" resultMap="BaseMap" resultType="com.yan.ssm.model.TblAdmin">
+    <select id="findAllUser" resultMap="BaseMap" resultType="com.yan.ssm.model.Admin">
         select * from tbl_admin
     </select>
 
@@ -31,11 +31,11 @@
         delete from tbl_admin where id = #{id}
     </delete>
 
-    <update id="updateByPrimaryKey"  parameterType="com.yan.ssm.model.TblAdmin">
+    <update id="updateByPrimaryKey"  parameterType="com.yan.ssm.model.Admin">
         update   tbl_admin  set username=#{username},password=#{password}   where id=#{id}
     </update>
 
-    <insert id="insert"  parameterType="com.yan.ssm.model.TblAdmin">
+    <insert id="insert"  parameterType="com.yan.ssm.model.Admin">
         insert into tbl_admin where id=#{id},username=#{username},password=#{password}
     </insert>
 

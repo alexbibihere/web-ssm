@@ -1,13 +1,11 @@
 package com.yan.ssm.service.impl;
 
-import com.yan.ssm.dao.UDao;
-import com.yan.ssm.model.TblUser;
+import com.yan.ssm.dao.UserDao;
 import com.yan.ssm.model.User;
 import com.yan.ssm.service.UseService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -17,7 +15,7 @@ import java.util.Map;
 @Service("useService")
 public class UseServiceImpl implements UseService {
     @Resource
-    private UDao uDao;
+    private UserDao uDao;
 
     public User checkLogin(String username, String password) {
         User user = uDao.selectByNick(username);

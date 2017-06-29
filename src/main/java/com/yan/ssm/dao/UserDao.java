@@ -1,7 +1,5 @@
 package com.yan.ssm.dao;
 
-import com.yan.ssm.model.TblAdmin;
-import com.yan.ssm.model.TblUser;
 import com.yan.ssm.model.User;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
@@ -10,24 +8,25 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Created by Zhangxq on 2016/7/15.
+ * Created by yan on 2017/6/21/0021.
  */
-
 @Repository
 public interface UserDao {
+    //public User findUserByName(String username);
 
-    TblUser selectUserById(@Param("userId") Long userId);
+    public User checkLogin(String username, String password);
 
-    TblUser selectUserByPhoneOrEmail(@Param("emailOrPhone") String emailOrPhone, @Param("state") Short state);
+    public void addUser(User user);
 
-    List<TblUser> selectAllUser();
+    Long insertSelective(User user);
 
-    TblUser selectByNick(@Param("username") String username);
+    int updateSelective(User user);
 
-    List<TblUser> selectByParams (Map<String,Object> params);
+    int deleteById(int id);
 
-    int updateByPrimaryKey (TblUser user);
+    List<User> selectByParams (Map<String,Object>params);
 
+    User selectByPrimaryKey(int id);
 
-    int deleteById(Long id);
+    User selectByNick(@Param("username") String username);
 }

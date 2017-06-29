@@ -1,6 +1,6 @@
 package com.yan.ssm.dao;
 
-import com.yan.ssm.model.TblAdmin;
+import com.yan.ssm.model.Admin;
 import com.yan.ssm.model.User;
 import org.springframework.stereotype.Repository;
 
@@ -13,19 +13,19 @@ import java.util.Map;
 @Repository
 public interface AdminDao {
 
-    List<TblAdmin> findAllUser();
+    List<Admin> findAllUser();
 
      User checkLogin(String username, String password);
 
     int deleteByPrimaryKey(int id);
 
-    int updateByPrimaryKey(TblAdmin admin);
+    int updateByPrimaryKey(Admin admin);
 
-    int insertSelective(TblAdmin admin);
+    int insertSelective(Admin admin);
 
-    TblAdmin selectByPrimaryKey(int id);
+    Admin selectByPrimaryKey(int id);
 
-    TblAdmin selectByNick(String nick);
+    Admin selectByNick(String nick);
 
-    List<TblAdmin> selectByParams (Map<String,Object> params);
+    List<Admin> selectByParams (Map<String,Object> params);
 }

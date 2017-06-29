@@ -52,9 +52,9 @@
             <td>${u.username}</td>
             <td>${u.password}</td>
             <td>
-                <a href="${pageContext.request.contextPath}/use/update?id=${u.id}">编辑</a>
+                <a href="${pageContext.request.contextPath}/user/getUser?id=${u.id}">修改</a>
                 <%--<a href="javascript:del('${u.id }')">删除</a>--%>
-                <a href="${pageContext.request.contextPath}/use/delete?id=${u.id}"> 删除</a>
+                <a href="${pageContext.request.contextPath}/user/delete?id=${u.id}"> 删除</a>
             </td>
         </tr>
     </c:forEach>

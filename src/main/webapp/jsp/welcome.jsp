@@ -23,7 +23,7 @@
     </script>
 </head>
 <body>
-<form action="user/showUser" method="post">
+<form action="user/getAllUser" method="post">
     <table width="350" bgcolor="#ccffcc"  border="1" align="center">
         <tr align=center>
             <td>用户名</td><td><input type="text" name="username" id="username"></td>

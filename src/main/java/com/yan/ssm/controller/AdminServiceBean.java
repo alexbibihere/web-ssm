@@ -1,7 +1,7 @@
 package com.yan.ssm.controller;
 
 import com.alibaba.fastjson.JSONObject;
-import com.yan.ssm.model.TblAdmin;
+import com.yan.ssm.model.Admin;
 import com.yan.ssm.service.AdminService;
 import org.apache.ibatis.annotations.Param;
 import org.apache.log4j.Logger;
@@ -31,7 +31,7 @@ public class AdminServiceBean implements Serializable {
     public String login(@Param("user") String username, @Param("password") String password, Model model) throws Exception {
         Map<String, Object> params = new HashMap<String, Object>();
         adminService.checkLogin(username, password);
-        List<TblAdmin> adminList = adminService.selectByParams(params);
+        List<Admin> adminList = adminService.selectByParams(params);
         if (adminList != null) {
             logger.info("登陆成功");
             model.addAttribute("adminList", adminList);
@@ -40,53 +40,56 @@ public class AdminServiceBean implements Serializable {
         return "fail";
     }
 
-    @RequestMapping("/getAllUser")
+    /**
+     * 查询所有管理员
+     */
+    @RequestMapping("/getAllAdmin")
     public String getAllUser(HttpServletRequest request, Model model) {
-        List<TblAdmin> adminList = adminService.findAllUser();
+        List<Admin> adminList = adminService.findAllUser();
         model.addAttribute("adminList", adminList);
         request.setAttribute("adminList", adminList);
         return "admin";
     }
 
     /**
-     *根据id查询单个用户
+     * 根据id查询单条数据
      */
-    @RequestMapping("/getUser")
-    public String getUser(int id,HttpServletRequest request, Model model) {
-        model.addAttribute("user",  adminService.selectByPrimaryKey(id));
-        request.setAttribute("user",  adminService.selectByPrimaryKey(id));
-        return "edit";
+    @RequestMapping("/getAdmin")
+    public String getUser(int id, HttpServletRequest request, Model model) {
+        model.addAttribute("user", adminService.selectByPrimaryKey(id));
+        request.setAttribute("user", adminService.selectByPrimaryKey(id));
+        return "editAdmin";
     }
 
     /**
      * 用户删除
      */
     @RequestMapping("/delete")
-    public String deleteUser(int id,Model model) {
-        TblAdmin user = adminService.selectByPrimaryKey(id);
+    public String deleteUser(int id, Model model) {
+        Admin user = adminService.selectByPrimaryKey(id);
         System.out.println("删除了" + user);
         adminService.deleteByPrimaryKey(id);
-        model.addAttribute("user",user);
+        model.addAttribute("user", user);
         return "info";
     }
 
 
     @RequestMapping("add")
-    public String addAdmin(TblAdmin admin) {
+    public String addAdmin(Admin admin) {
         int id = adminService.insertSelective(admin);
-        TblAdmin admin1 = adminService.selectByPrimaryKey(id);
+        Admin admin1 = adminService.selectByPrimaryKey(id);
         System.out.println("添加成功");
         System.out.println(JSONObject.toJSONString(admin1));
         return "admin";
     }
 
     @RequestMapping("update")
-    public String updateAdmin(TblAdmin admin, HttpServletRequest request, Model model) {
+    public String updateAdmin(Admin admin, HttpServletRequest request, Model model) {
         adminService.updateByPrimaryKey(admin);
-        TblAdmin tblAdmin = adminService.selectByPrimaryKey(admin.getId());
+        Admin tblAdmin = adminService.selectByPrimaryKey(admin.getId());
         System.out.println("修改成功");
         request.setAttribute("tblAdmin", tblAdmin);
         model.addAttribute("tblAdmin", tblAdmin);
-        return "redirect:/admin/getAllUser";
+        return "redirect:/admin/getAllAdmin";
     }
 }
