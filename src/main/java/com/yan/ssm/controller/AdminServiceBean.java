@@ -11,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.io.Serializable;
 import java.util.HashMap;
 import java.util.List;
@@ -26,7 +27,9 @@ public class AdminServiceBean implements Serializable {
     @Autowired
     private AdminService adminService;
 
-
+    /**
+    *管理员登录
+     */
     @RequestMapping("/login")
     public String login(@Param("user") String username, @Param("password") String password, Model model) throws Exception {
         Map<String, Object> params = new HashMap<String, Object>();
@@ -40,11 +43,17 @@ public class AdminServiceBean implements Serializable {
         return "fail";
     }
 
+    @RequestMapping("/logout")
+    public  String logou(HttpSession session){
+        session.removeAttribute("username");
+        return  "login";
+    }
+
     /**
      * 查询所有管理员
      */
     @RequestMapping("/getAllAdmin")
-    public String getAllUser(HttpServletRequest request, Model model) {
+    public String getAllAdmin(HttpServletRequest request, Model model) {
         List<Admin> adminList = adminService.findAllUser();
         model.addAttribute("adminList", adminList);
         request.setAttribute("adminList", adminList);
@@ -55,17 +64,17 @@ public class AdminServiceBean implements Serializable {
      * 根据id查询单条数据
      */
     @RequestMapping("/getAdmin")
-    public String getUser(int id, HttpServletRequest request, Model model) {
+    public String getAdmin(int id, HttpServletRequest request, Model model) {
         model.addAttribute("user", adminService.selectByPrimaryKey(id));
         request.setAttribute("user", adminService.selectByPrimaryKey(id));
         return "editAdmin";
     }
 
     /**
-     * 用户删除
+     * 管理员删除
      */
     @RequestMapping("/delete")
-    public String deleteUser(int id, Model model) {
+    public String delete(int id, Model model) {
         Admin user = adminService.selectByPrimaryKey(id);
         System.out.println("删除了" + user);
         adminService.deleteByPrimaryKey(id);
@@ -74,7 +83,7 @@ public class AdminServiceBean implements Serializable {
     }
 
 
-    @RequestMapping("add")
+    @RequestMapping("/register")
     public String addAdmin(Admin admin) {
         int id = adminService.insertSelective(admin);
         Admin admin1 = adminService.selectByPrimaryKey(id);
@@ -83,7 +92,7 @@ public class AdminServiceBean implements Serializable {
         return "admin";
     }
 
-    @RequestMapping("update")
+    @RequestMapping("/update")
     public String updateAdmin(Admin admin, HttpServletRequest request, Model model) {
         adminService.updateByPrimaryKey(admin);
         Admin tblAdmin = adminService.selectByPrimaryKey(admin.getId());

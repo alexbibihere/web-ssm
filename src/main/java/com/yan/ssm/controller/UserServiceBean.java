@@ -6,9 +6,12 @@ import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import java.io.File;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -37,6 +40,15 @@ public class UserServiceBean {
             return "userList"; //登录成功 跳转到显示页
         }
         return "fail";
+    }
+
+    @RequestMapping("/checkUsername")
+    public Boolean checkUsername(String username){
+       User user =useService.selectByNick(username);
+        if (user != null){
+            return true;
+        }
+        return  false;
     }
 
     /**
@@ -105,5 +117,14 @@ public class UserServiceBean {
 
     }
 
-
+    /**
+    * 文件上传
+     */
+    @RequestMapping("/upload")
+    public String upload(MultipartFile file,HttpServletRequest request) throws IOException {
+        String name = file.getOriginalFilename();
+        File uploadF = new File("/"+name);
+        file.transferTo(uploadF);
+        return  "article";
+    }
 }

@@ -57,6 +57,7 @@
     <a href="user/getAllUser">查看用户列表</a>
     <a href="admin/getAllAdmin">查看管理员列表</a>
     <a href="jsp/login.jsp">登录</a>
+    <a href="jsp/upload.jsp">upload</a>
     <a href="regist.jsp">跳到注册页</a>
 </div>
 <form action="${pageContext.request.contextPath}/user/login" method="post" class="div">
