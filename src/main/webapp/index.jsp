@@ -56,9 +56,11 @@
     <a href="jsp/welcome.jsp">跳到欢迎页</a>
     <a href="user/getAllUser">查看用户列表</a>
     <a href="admin/getAllAdmin">查看管理员列表</a>
-    <a href="jsp/login.jsp">登录</a>
+    <a href="login.jsp">登录</a>
+    <a href="html/login.html">博客登录</a>
     <a href="jsp/upload.jsp">upload</a>
     <a href="regist.jsp">跳到注册页</a>
+    <a href="html/add-article.jsp">添加文章</a>
 </div>
 <form action="${pageContext.request.contextPath}/user/login" method="post" class="div">
     用户名： <input type="text" id="username" name="username" value="admin"> <br>

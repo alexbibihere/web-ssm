@@ -43,7 +43,7 @@
         SELECT * FROM tbl_user
     </select>
 
-    <select id="countByParams" resultMap="java.lang.Integer">
+   <!-- <select id="countByParams" resultMap="java.lang.Integer">
         SELECT count(*) from tbl_user
-    </select>
+    </select>-->
 </mapper>
