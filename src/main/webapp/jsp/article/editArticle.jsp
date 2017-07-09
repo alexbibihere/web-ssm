@@ -17,7 +17,7 @@
 </head>
 <body>
 <head>
-    <h1>更新用户信息</h1>
+    <h1>编辑文章信息</h1>
     <form action="${pageContext.request.contextPath}/article/update" method="post" class="div" >
         <input type="hidden" name="id" value="${article.id}">
         标题：   <input type="text"  name="title" value="${article.title}"> <br>

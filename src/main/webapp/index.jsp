@@ -57,11 +57,14 @@
         height: 100px;
         float: left;
     }
+    .navbar-brand{float:left;height:50px;padding:15px 15px;font-size:18px;line-height:20px}
+    .navbar-brand:focus,.navbar-brand:hover{text-decoration:none}
+  /*  .navbar-brand>img{display:block}@media (min-width:768px){.navbar>.container .navbar-brand,.navbar>.container-fluid .navbar-brand{margin-left:-15px}}*/
     /* css注释：为了观察效果设置宽度 边框 高度等样式 */
 </style>
 <body>
 <div class="top-left"><h1>欢迎来到我的博客</h1><br></div>
-
+<a class="navbar-brand">yandeguang</a>
 <div class="top-right">
 
     <a href="jsp/welcome.jsp">跳到欢迎页</a>

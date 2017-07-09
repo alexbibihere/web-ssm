@@ -14,6 +14,7 @@
 </head>
 <body>
         <h1> 欢迎来到我的文章</h1>
+        <a href="${pageContext.request.contextPath}/html/add-article.html">添加文章</a>
         <tr>
             <th>标题</th>
             <th>作者</th>
