@@ -22,29 +22,29 @@ public class ArticleServiceBean {
     /**
      * 查询所有文章
      */
-    @RequestMapping("/getAllAdmin")
-    public String getAllAdmin(HttpServletRequest request, Model model) {
+    @RequestMapping("/getAllArticle")
+    public String getAllArticle(HttpServletRequest request, Model model) {
         List<Article> articleList = articleService.selectAllArticle();
         model.addAttribute("articleList", articleList);
         request.setAttribute("articleList", articleList);
-        return "/admin";
+        return "article/articleList";
     }
 
     /**
      * 根据id查询单篇文章
      */
-    @RequestMapping("/getAdmin")
-    public String getAdmin(int id, HttpServletRequest request, Model model) {
-        model.addAttribute("user", articleService.selectByPrimaryKey(id));
-        request.setAttribute("user", articleService.selectByPrimaryKey(id));
-        return "/editAdmin";
+    @RequestMapping("/getArticle")
+    public String getArticle(Long id, Model model) {
+        model.addAttribute("article", articleService.selectByPrimaryKey(id));
+        //request.setAttribute("article", articleService.selectByPrimaryKey(id));
+        return "article/editArticle";
     }
 
     /**
      * 删除文章
      */
     @RequestMapping("/delete")
-    public String delete(int id, Model model) {
+    public String delete(Long id, Model model) {
         Article article = articleService.selectByPrimaryKey(id);
         System.out.println("删除了" + article);
         articleService.deleteById(id);
@@ -62,6 +62,6 @@ public class ArticleServiceBean {
         System.out.println("修改成功");
         request.setAttribute("tblArticle", tblArticle);
         model.addAttribute("tblArticle", tblArticle);
-        return "redirect:/admin/getAllAdmin";
+        return "redirect:/article/getAllArticle";
     }
 }

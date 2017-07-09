@@ -14,11 +14,11 @@ public interface ArticleService {
 
     int updateSelective(Article article);
 
-    int deleteById(int id);
+    int deleteById(Long id);
 
     List<Article> selectByParams (Map<String,Object> params);
 
-    Article selectByPrimaryKey(int id);
+    Article selectByPrimaryKey(Long id);
 
     List<Article> selectAllArticle();
 }

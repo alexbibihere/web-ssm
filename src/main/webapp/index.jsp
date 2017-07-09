@@ -71,6 +71,7 @@
     <a href="html/login.html">博客登录</a>
     <a href="jsp/upload.jsp">upload</a>
     <a href="regist.jsp">跳到注册页</a>
+    <a href="article/getAllArticle">查看我的文章</a>
     <a href="html/add-article.jsp">添加文章</a>
 </div>
 <form action="${pageContext.request.contextPath}/user/login" method="post" class="div">

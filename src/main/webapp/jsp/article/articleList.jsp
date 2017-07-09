@@ -21,13 +21,17 @@
             <th>发布日期</th>
         </tr>
 
+        <c:if test="${!empty articleList}">
+            <c:forEach var="article" items="${articleList}">
                 <tr>
-                    标题：${article.title} &nbsp;&nbsp;<br>
+                    <a href="${pageContext.request.contextPath}/article/getArticle?id=${article.id}"> 标题：${article.title} &nbsp;&nbsp;</a>
                     作者：${article.author} &nbsp;&nbsp;<br>
                     内容：${article.content} &nbsp;&nbsp;<br>
                     发布日期：${article.createTime} &nbsp;&nbsp;<br>
-                    <a href="${pageContext.request.contextPath}/article/getArticle?id=${artice.id}">编辑</a>
+                    <a href="${pageContext.request.contextPath}/article/getArticle?id=${article.id}">修改</a>
+                    <a href="${pageContext.request.contextPath}/article/delete?id=${article.id}"> 删除</a><br>
                 </tr>
-
+            </c:forEach>
+        </c:if>
 </body>
 </html>

@@ -34,7 +34,7 @@ public class ArticleServiceImpl implements ArticleService {
         return  rows;
     }
 
-    public int deleteById(int id) {
+    public int deleteById(Long id) {
       int rows =   articleDao.deleteById(id);
         if (rows>0) {
             System.out.println("删除文章成功:deleteById");
@@ -48,7 +48,7 @@ public class ArticleServiceImpl implements ArticleService {
             return  articleList;
     }
 
-    public Article selectByPrimaryKey(int id) {
+    public Article selectByPrimaryKey(Long id) {
         Article user=    articleDao.selectByPrimaryKey(id);
         System.out.println("根据id查询成功:selectByPrimaryKey");
         return  user;

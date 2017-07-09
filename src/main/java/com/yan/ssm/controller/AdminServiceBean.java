@@ -3,6 +3,7 @@ package com.yan.ssm.controller;
 import com.alibaba.fastjson.JSONObject;
 import com.yan.ssm.model.Admin;
 import com.yan.ssm.service.AdminService;
+import com.yan.ssm.util.MD5Util;
 import org.apache.ibatis.annotations.Param;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -87,6 +88,7 @@ public class AdminServiceBean implements Serializable {
      */
     @RequestMapping("/register")
     public String addAdmin(Admin admin) {
+        //admin.setPassword(MD5Util.MD5Encode(admin.getPassword()));
         int id = adminService.insertSelective(admin);
         Admin admin1 = adminService.selectByPrimaryKey(id);
         System.out.println("添加成功");

@@ -6,7 +6,7 @@ import java.util.Date;
  * Created by yan on 2017/7/6/0006.
  */
 public class Article {
-    private int id;
+    private Long id;
     private String title;
     private String author;
     private String content;
@@ -15,23 +15,14 @@ public class Article {
     private int categoryId;
     private Date createTime;
     private Date modifiedTime;
-    private String picture;
 
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
-    }
-
-    public String getPicture() {
-        return picture;
-    }
-
-    public void setPicture(String picture) {
-        this.picture = picture;
     }
 
     public String getTitle() {
