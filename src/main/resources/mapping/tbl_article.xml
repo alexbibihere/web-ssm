@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yan.ssm.dao.ArticleDao">
+
+    <resultMap id="BaseMap" type="com.yan.ssm.model.Article">
+        <id column="id" property="id" jdbcType="BIGINT"/>
+        <result column="username" property="username" jdbcType="VARCHAR"/>
+        <result column="password" property="password" jdbcType="VARCHAR"/>
+        <result column="title" property="title" jdbcType="VARCHAR"/>
+        <result column="author" property="author" jdbcType="VARCHAR"/>
+        <result column="content" property="content" jdbcType="VARCHAR"/>
+        <result column="readNum" property="readNum" jdbcType="VARCHAR"/>
+        <result column="isDeleted" property="isDeleted" jdbcType="BOOLEAN"/>
+        <result column="categoryId" property="categoryId" jdbcType="BIGINT"/>
+        <result column="create_time" property="createTime" jdbcType="TIMESTAMP"/>
+        <result column="modified_time" property="modifiedTime" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <insert id="insertSelective" parameterType="com.yan.ssm.model.Article">
+        INSERT INTO tbl_article(username,password,title,author,content,readNum,isDeleted,categoryId)
+        values (#{username},#{password},#{title},#{author},#{content},#{readNum},#{isDeleted},#{categoryId})
+    </insert>
+
+    <update id="updateSelective" parameterType="com.yan.ssm.model.Article">
+        update  tbl_article
+        set
+        username,password,sex
+        VALUES #{username},#{password},#{sex}
+        where id = #{id}
+    </update>
+
+    <delete id="deleteById" parameterType="int">
+        delete FROM tbl_article WHERE  id = #{id}
+    </delete>
+
+
+    <select id="selectByPrimaryKey" resultMap="BaseMap">
+        SELECT * FROM tbl_article where id = #{id}
+    </select>
+
+
+    <select id="selectByParams" resultMap="BaseMap">
+        SELECT * FROM tbl_article
+    </select>
+
+    <select id="selectAllArticle" resultMap="BaseMap" resultType="com.yan.ssm.model.Article">
+         SELECT * FROM tbl_article
+    </select>
+</mapper>

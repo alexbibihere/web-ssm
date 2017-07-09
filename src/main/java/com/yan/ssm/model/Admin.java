@@ -1,13 +1,16 @@
 package com.yan.ssm.model;
 
+import java.util.Date;
+
 /**
  * Created by yan on 2017/6/20/0020.
  */
 public class Admin {
-    private  int id;
+    private int id;
     private String username;
-    private String age;
-    private  String password;
+    private String password;
+    private Date createTime;
+    private Date modifiedTime;
 
     public int getId() {
         return id;
@@ -17,12 +20,20 @@ public class Admin {
         this.id = id;
     }
 
-    public String getAge() {
-        return age;
+    public Date getCreateTime() {
+        return createTime;
     }
 
-    public void setAge(String age) {
-        this.age = age;
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public Date getModifiedTime() {
+        return modifiedTime;
+    }
+
+    public void setModifiedTime(Date modifiedTime) {
+        this.modifiedTime = modifiedTime;
     }
 
     public String getUsername() {

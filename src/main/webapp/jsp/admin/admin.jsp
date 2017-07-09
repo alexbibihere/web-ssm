@@ -16,7 +16,7 @@
 <head>
     <title>管理员列表</title>
     <base href="<%=basePath%>">
-    <script type="text/javascript" src="../jquery-1.7.1.js"></script>
+    <script type="text/javascript" src="../../jquery-1.7.1.js"></script>
     <script type="text/javascript">
 
         function del(id){
@@ -69,11 +69,15 @@
             align:center;
             width:400px; height: 200px; border-radius:10px;
         }
+        .c1{
+            margin-right: -800px;
+
+        }
         /* css注释：为了观察效果设置宽度 边框 高度等样式 */
     </style>
 </head>
 <body>
-<h1>欢迎来到管理员后台</h1>
+<h1>欢迎来到管理员后台</h1>          <a href="${pageContext.request.contextPath}/index.jsp" class="c1">回到首页</a>
 <table border="1" class="c">
     <tbody>
     <tr>
@@ -89,7 +93,6 @@
                 <td>${u.id}</td>
                 <td>${u.username}</td>
                 <td>${u.password}</td>
-                <td>${u.age}</td>
                 <td id="qw">
                     <%--<a href="${pageContext.request.contextPath}user/update?id=${u.id}">编辑</a>
                     <a href="javascript:del('${u.id }')">删除</a>--%>

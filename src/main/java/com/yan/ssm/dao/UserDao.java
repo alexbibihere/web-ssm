@@ -12,7 +12,6 @@ import java.util.Map;
  */
 @Repository
 public interface UserDao {
-    //public User findUserByName(String username);
 
     public User checkLogin(String username, String password);
 

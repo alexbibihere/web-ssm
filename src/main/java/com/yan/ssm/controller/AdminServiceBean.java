@@ -57,7 +57,7 @@ public class AdminServiceBean implements Serializable {
         List<Admin> adminList = adminService.findAllUser();
         model.addAttribute("adminList", adminList);
         request.setAttribute("adminList", adminList);
-        return "admin";
+        return "admin/admin";
     }
 
     /**
@@ -67,7 +67,7 @@ public class AdminServiceBean implements Serializable {
     public String getAdmin(int id, HttpServletRequest request, Model model) {
         model.addAttribute("user", adminService.selectByPrimaryKey(id));
         request.setAttribute("user", adminService.selectByPrimaryKey(id));
-        return "editAdmin";
+        return "admin/editAdmin";
     }
 
     /**
@@ -82,16 +82,21 @@ public class AdminServiceBean implements Serializable {
         return "info";
     }
 
-
+    /**
+     * 添加管理员
+     */
     @RequestMapping("/register")
     public String addAdmin(Admin admin) {
         int id = adminService.insertSelective(admin);
         Admin admin1 = adminService.selectByPrimaryKey(id);
         System.out.println("添加成功");
         System.out.println(JSONObject.toJSONString(admin1));
-        return "admin";
+        return "admin/admin";
     }
 
+    /**
+     * 修改管理员信息
+     */
     @RequestMapping("/update")
     public String updateAdmin(Admin admin, HttpServletRequest request, Model model) {
         adminService.updateByPrimaryKey(admin);

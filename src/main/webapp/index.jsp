@@ -44,14 +44,25 @@
         border-radius: 10px;
         align: center
     }
-    .nav{
-        margin-right: -1400px;
+    .top-right{
+        width:400px;
+        height: 100px;
+        float: right;
+    }
+    .top-left{
+        font-size: 14px;
+        text-align: right;
+        width:1100px;
+        margin-right: 100px;
+        height: 100px;
+        float: left;
     }
     /* css注释：为了观察效果设置宽度 边框 高度等样式 */
 </style>
 <body>
-<h1>我的博客</h1><br>
-<div class="nav">
+<div class="top-left"><h1>欢迎来到我的博客</h1><br></div>
+
+<div class="top-right">
 
     <a href="jsp/welcome.jsp">跳到欢迎页</a>
     <a href="user/getAllUser">查看用户列表</a>

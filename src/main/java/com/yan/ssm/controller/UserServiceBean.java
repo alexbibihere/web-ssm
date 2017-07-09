@@ -90,7 +90,7 @@ public class UserServiceBean {
         Map<String, Object> params = new HashMap<String, Object>();
         List<User> user = useService.selectByParams(params);
         model.addAttribute("user", user);
-        return "userList";
+        return "user/userList";
     }
 
     /**
@@ -100,7 +100,7 @@ public class UserServiceBean {
     public String getUser(int id, HttpServletRequest request, Model model) {
         model.addAttribute("user", useService.selectByPrimaryKey(id));
         request.setAttribute("user", useService.selectByPrimaryKey(id));
-        return "editUser";
+        return "user/editUser";
     }
 
     /**

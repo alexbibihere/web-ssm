@@ -1,5 +1,7 @@
 package com.yan.ssm.model;
 
+import java.util.Date;
+
 /**
  * Created by yan on 2017/7/6/0006.
  */
@@ -8,10 +10,13 @@ public class Article {
     private String title;
     private String author;
     private String content;
-    private String keywords;
-    private String decription;
-
+    private String readNum;
+    private String isDeleted;
+    private int categoryId;
+    private Date createTime;
+    private Date modifiedTime;
     private String picture;
+
 
     public int getId() {
         return id;
@@ -45,6 +50,22 @@ public class Article {
         this.author = author;
     }
 
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public Date getModifiedTime() {
+        return modifiedTime;
+    }
+
+    public void setModifiedTime(Date modifiedTime) {
+        this.modifiedTime = modifiedTime;
+    }
+
     public String getContent() {
         return content;
     }
@@ -53,19 +74,27 @@ public class Article {
         this.content = content;
     }
 
-    public String getKeywords() {
-        return keywords;
+    public String getReadNum() {
+        return readNum;
     }
 
-    public void setKeywords(String keywords) {
-        this.keywords = keywords;
+    public void setReadNum(String readNum) {
+        this.readNum = readNum;
     }
 
-    public String getDecription() {
-        return decription;
+    public String getIsDeleted() {
+        return isDeleted;
     }
 
-    public void setDecription(String decription) {
-        this.decription = decription;
+    public void setIsDeleted(String isDeleted) {
+        this.isDeleted = isDeleted;
+    }
+
+    public int getCategoryId() {
+        return categoryId;
+    }
+
+    public void setCategoryId(int categoryId) {
+        this.categoryId = categoryId;
     }
 }
