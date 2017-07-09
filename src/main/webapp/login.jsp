@@ -19,28 +19,61 @@
     <link rel="apple-touch-icon-precomposed" href="html/images/icon.png">
     <link rel="shortcut icon" href="html/images/favicon.ico">
     <script src="html/js/jquery-2.1.4.min.js"></script>
-
-<%--    <!--[if gte IE 9]>
-    <script src="html/js/jquery-1.11.1.min.js" type="text/javascript"></script>
-    <script src="html/js/html5shiv.min.js" type="text/javascript"></script>
-    <script src="html/js/respond.min.js" type="text/javascript"></script>
-    <script src="html/js/selectivizr-min.js" type="text/javascript"></script>
-    <![endif]-->--%>
+    <style type="text/css">
+        .form-signin {
+            max-width: 330px;
+            padding: 15px;
+            margin: 0 auto;
+            background: #FFF;
+            -moz-box-shadow: 0px 1px 5px rgba(0,0,0,.1);
+            -webkit-box-shadow: 0px 1px 5px rgba(0,0,0,.1);
+            box-shadow: 0px 1px 5px rgba(0,0,0,.1);
+        }
+        .form-signin .form-signin-heading, .form-signin .checkbox {
+            margin-bottom: 10px;
+        }
+        .form-signin .checkbox {
+            font-weight: normal;
+        }
+        .form-signin .form-control {
+            position: relative;
+            height: auto;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            padding: 10px;
+            font-size: 16px;
+        }
+        .form-signin .form-control:focus {
+            z-index: 2;
+        }
+    </style>
+    <%--    <!--[if gte IE 9]>
+        <script src="html/js/jquery-1.11.1.min.js" type="text/javascript"></script>
+        <script src="html/js/html5shiv.min.js" type="text/javascript"></script>
+        <script src="html/js/respond.min.js" type="text/javascript"></script>
+        <script src="html/js/selectivizr-min.js" type="text/javascript"></script>
+        <![endif]-->--%>
     <!--[if lt IE 9]>
-    <script>window.location.href='upgrade-browser.html';</script>
+    <script>window.location.href = 'upgrade-browser.html';</script>
     <![endif]-->
 </head>
 
 <body class="user-select">
 <div class="container">
-    <div class="siteIcon"><img src="html/images/icon.png" alt="" data-toggle="tooltip" data-placement="top" title="欢迎使用我的博客" draggable="false" /></div>
+    <div class="siteIcon"><img src="html/images/icon.png" alt="" data-toggle="tooltip" data-placement="top"
+                               title="欢迎使用我的博客" draggable="false"/></div>
     <form action="user/login" method="post" autocomplete="off" class="form-signin">
         <h2 class="form-signin-heading">管理员登录</h2>
         <label for="userName" class="sr-only">用户名</label>
-        <input type="text" id="userName" name="username" class="form-control" placeholder="请输入用户名" required autofocus autocomplete="off" maxlength="10">
+        <input type="text" id="userName" name="username" class="form-control" placeholder="请输入用户名" required autofocus
+               autocomplete="off" maxlength="10">
         <label for="userPwd" class="sr-only">密码</label>
-        <input type="password" id="userPwd" name="password" class="form-control" placeholder="请输入密码" required autocomplete="off" maxlength="18">
-        <a href="main.html"><button class="btn btn-lg btn-primary btn-block" type="submit" id="signinSubmit">登录</button></a>
+        <input type="password" id="userPwd" name="password" class="form-control" placeholder="请输入密码" required
+               autocomplete="off" maxlength="18">
+        <a href="main.html">
+            <button class="btn btn-lg btn-primary btn-block" type="submit" id="signinSubmit">登录</button>
+        </a>
     </form>
     <div class="footer">
         <p><a href="html/index.jsp" data-toggle="tooltip" data-placement="left" title="不知道自己在哪?">回到后台 →</a></p>
@@ -49,18 +82,18 @@
 <script src="html/js/bootstrap.min.js"></script>
 <script>
     $('[data-toggle="tooltip"]').tooltip();
-    window.oncontextmenu = function(){
+    window.oncontextmenu = function () {
         //return false;
     };
-    $('.siteIcon img').click(function(){
+    $('.siteIcon img').click(function () {
         window.location.reload();
     });
-    $('#signinSubmit').click(function(){
-        if($('#userName').val() === ''){
+    $('#signinSubmit').click(function () {
+        if ($('#userName').val() === '') {
             $(this).text('用户名不能为空');
-        }else if($('#userPwd').val() === ''){
+        } else if ($('#userPwd').val() === '') {
             $(this).text('密码不能为空');
-        }else{
+        } else {
             $(this).text('请稍后...');
         }
     });

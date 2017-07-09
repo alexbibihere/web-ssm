@@ -61,25 +61,22 @@
             text-align: center
         }
 
-        .div {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            margin-top: -100px;
-            margin-left: -200px;
-            background: #69F;
-            width: 400px;
-            height: 200px;
-            border-radius: 10px;
-            align: center
+        .form-signin {
+            max-width: 330px;
+            padding: 15px;
+            margin: 0 auto;
+            background: #FFF;
+            -moz-box-shadow: 0px 1px 5px rgba(0,0,0,.1);
+            -webkit-box-shadow: 0px 1px 5px rgba(0,0,0,.1);
+            box-shadow: 0px 1px 5px rgba(0,0,0,.1);
         }
 
         /* css注释：为了观察效果设置宽度 边框 高度等样式 */
     </style>
 </head>
 <body>
-<h1>注册</h1>
-<form action="${pageContext.request.contextPath}/user/register" method="post" class="div">
+<span>用户注册</span>
+<form action="${pageContext.request.contextPath}/user/register" method="post" class="form-signin">
     用户名： <input type="text" name="username"  onblur="checkUsername(this.value)"><span id="msg"></span> <br>
     密码： <input type="password" name="password" > <br>
     <input type="submit" value="提交" onclick="r();"/>

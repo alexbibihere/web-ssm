@@ -37,7 +37,7 @@ public class UserServiceBean {
         if (user != null) {
             logger.info("登陆成功");
             model.addAttribute("user", user);
-            return "about"; //登录成功 跳转到显示页
+            return "user/userList"; //登录成功 跳转到显示页
         }
         return "fail";
     }
