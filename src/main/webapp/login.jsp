@@ -65,5 +65,31 @@
         }
     });
 </script>
+
+<%--
+<div class="container" style="width:300px;border:blue;">
+
+    <form class="form-signin" action="${pageContext.request.contextPath}/user/login" method="post">
+        <h2 class="form-signin-heading">登录</h2>
+        <label for="username" class="sr-only">Email address</label>
+        <input type="text" id="username" class="form-control" placeholder="请输入用户名" required autofocus>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="inputPassword" class="form-control" placeholder="请输入密码" required>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" value="remember-me"> 记住我
+            </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
+    </form>
+
+</div> <!-- /container -->
+
+&lt;%&ndash;
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>&ndash;%&gt;
+<script src="js/jquery-1.11.1.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.min.js"></script>--%>
 </body>
 </html>

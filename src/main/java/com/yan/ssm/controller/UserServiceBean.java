@@ -35,9 +35,9 @@ public class UserServiceBean {
         useService.checkLogin(username, password);
         List<User> user = useService.selectByParams(params);
         if (user != null) {
-            logger.info("登陆成功");
+            logger.info(" 登录成功");
             model.addAttribute("user", user);
-            return "about"; //登录成功 跳转到显示页
+            return "user/userList"; //登录成功 跳转到显示页
         }
         return "fail";
     }
@@ -55,14 +55,15 @@ public class UserServiceBean {
      * 用户注册
      */
     @RequestMapping("/register")
-    public String register(String username, String password, Model model) {
+    public String register(String username, String password,String sex, Model model) {
         User user = new User();
         user.setUsername(username);
         user.setPassword(password);
+        user.setSex(sex);
         User u = useService.selectByNick(username);
         if (u == null) {
             useService.insertSelective(user);
-            return "success";
+            return "redirect:/user/getAllUser";
         }
         model.addAttribute("user", user);
         return "fail";

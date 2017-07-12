@@ -9,11 +9,8 @@
 <html>
 <head>
     <title>Title</title>
-    <style>
-        body{
-            text-align:center;
-        }
-    </style>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
 </head>
 <body>
 <head>

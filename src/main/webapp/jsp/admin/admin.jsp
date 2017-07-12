@@ -16,7 +16,7 @@
 <head>
     <title>管理员列表</title>
     <base href="<%=basePath%>">
-    <script type="text/javascript" src="../../jquery-1.7.1.js"></script>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
     <script type="text/javascript">
 
         function del(id){
@@ -58,27 +58,67 @@
             alert("erwe");
         });*/
     </script>
-    <style>
-        body{ text-align:center}
-        .div{position:absolute; top:50%;left:50%;margin-top:-100px;margin-left:-200px;background:#69F; width:400px; height: 200px; border-radius:10px; align:center}
-        .c{
-            margin-top:-100px;
-            margin-left:-200px;
-            position:absolute;
-            top:50%;left:50%;
-            align:center;
-            width:400px; height: 200px; border-radius:10px;
-        }
-        .c1{
-            margin-right: -800px;
 
-        }
-        /* css注释：为了观察效果设置宽度 边框 高度等样式 */
-    </style>
 </head>
 <body>
+
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Yande</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" >
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">个人中心 <span class="sr-only">(current)</span></a></li>
+                <li><a href="#">文章</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">你听 <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">One more separated link</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <form class="navbar-form navbar-left">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search">
+                </div>
+                <button type="submit" class="btn btn-default">
+                    <span class="glyphicon glyphicon-search">搜索</span>
+                </button>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">设置</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">严德广 <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
 <h1>欢迎来到管理员后台</h1>          <a href="${pageContext.request.contextPath}/index.jsp" class="c1">回到首页</a>
-<table border="1" class="c">
+<table border="1" class="table table-bordered">
     <tbody>
     <tr>
         <th>id</th>
@@ -96,9 +136,9 @@
                 <td id="qw">
                     <%--<a href="${pageContext.request.contextPath}user/update?id=${u.id}">编辑</a>
                     <a href="javascript:del('${u.id }')">删除</a>--%>
-                    <a href="${pageContext.request.contextPath}/admin/getAdmin?id=${u.id}">修改</a>
+                    <a class="btn btn-primary" href="${pageContext.request.contextPath}/admin/getAdmin?id=${u.id}">修改</a>
                         <%--<a href="javascript:del('${u.id }')">删除</a>--%>
-                    <a href="${pageContext.request.contextPath}/admin/delete?id=${u.id}"> 删除</a>
+                    <a class="btn btn-danger" href="${pageContext.request.contextPath}/admin/delete?id=${u.id}"> 删除</a>
             <%--<button onclick="del()" class="btn">删除</button>--%>
                  <%--   <a href="${pageContext.request.contextPath/user?method=delete?id=${u.id}}" onclick="del">删除</a>--%>
                 </td>
