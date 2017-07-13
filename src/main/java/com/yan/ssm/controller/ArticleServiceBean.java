@@ -20,6 +20,18 @@ public class ArticleServiceBean {
     private ArticleService articleService;
 
     /**
+    * 添加新文章
+     */
+    @RequestMapping("add")
+    public String addArticle(Article article,Model model){
+         articleService.insertSelective(article);
+
+        System.out.println();
+        return "success";
+
+    }
+
+    /**
      * 查询所有文章
      */
     @RequestMapping("/getAllArticle")

@@ -1074,7 +1074,7 @@ vjs.el = function(id){
  * Supplying a guide (in seconds) will force a number of leading zeros
  * to cover the length of the guide
  * @param  {Number} seconds Number of seconds to be turned into a string
- * @param  {Number} guide   Number (in seconds) to model the string after
+ * @param  {Number} guide   Number (in seconds) to pojo the string after
  * @return {String}         Time formatted as H:MM:SS or M:SS
  * @private
  */

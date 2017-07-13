@@ -1123,7 +1123,7 @@ pathAnim = {
 				if (fn === 'cur') {
 					obj = Fx.prototype; // 'cur', the getter, relates to Fx.prototype
 				
-				} else if (fn === '_default' && Tween) { // jQuery 1.8 model
+				} else if (fn === '_default' && Tween) { // jQuery 1.8 pojo
 					obj = propHooks[fn];
 					fn = 'set';
 				}
@@ -2451,7 +2451,7 @@ SVGElement.prototype = {
 				}
 			};			
 		} else {
-			// simplest possible event model for internal use
+			// simplest possible event pojo for internal use
 			element['on' + eventType] = handler;
 		}
 		return this;
@@ -4975,7 +4975,7 @@ Highcharts.VMLElement = VMLElement = {
 	 * @param {Function} handler
 	 */
 	on: function (eventType, handler) {
-		// simplest possible event model for internal use
+		// simplest possible event pojo for internal use
 		this.element['on' + eventType] = function () {
 			var evt = win.event;
 			evt.target = evt.srcElement;

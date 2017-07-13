@@ -25,6 +25,7 @@
     <mvc:resources location="/css/" mapping="/css/**"/>
     <mvc:resources location="/fonts/" mapping="/fonts/**"/>
     <mvc:resources location="/images/" mapping="/images/**"/>
+    <mvc:resources location="/lib/" mapping="/lib/**"/>
 
 
 

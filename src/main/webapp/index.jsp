@@ -87,7 +87,7 @@
 
     <a href="regist.jsp">跳到注册页</a>
     <a href="article/getAllArticle">查看我的文章</a>
-    <a href="${pageContext.request.contextPath}/jsp/article/addArticle.jsp">添加文章</a>
+    <a href="${pageContext.request.contextPath}/jsp/article/add-article.jsp">添加文章</a>
 </div>
 <%--<form action="${pageContext.request.contextPath}/user/login" method="post" class="div">
     用户名： <input type="text" id="username" name="username" value="admin"> <br>

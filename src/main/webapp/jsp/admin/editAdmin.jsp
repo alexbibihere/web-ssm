@@ -9,7 +9,7 @@
 <html>
 <head>
     <title>编辑页面</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet">
 
 </head>
 <body>
@@ -69,12 +69,15 @@
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
+<div class="container" style="width:300px;border:blue;">
+
 <h1>更新管理员信息</h1>
-<form action="${pageContext.request.contextPath}/admin/update" method="post" class="div" >
+<form action="${pageContext.request.contextPath}/admin/update" method="post" class="form-signin">
     <input type="hidden" name="id" value="${user.id}">
     用户名：   <input type="text"  name="username" value="${user.username}"> <br>
     密码：  <input type="text"  name="password" value="${user.password}"> <br>
-    <input type="submit" value="提交" />
+    <input type="submit" class="btn btn-lg btn-primary btn-block" value="提交" />
 </form>
+</div>
 </body>
 </html>

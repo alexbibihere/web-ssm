@@ -6,7 +6,7 @@
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>写文章 - 博客管理系统</title>
+    <title>写公告 - 异清轩博客管理系统</title>
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css">
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/font-awesome.min.css">
@@ -31,7 +31,7 @@
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"> <span class="sr-only">切换导航</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-                    <a class="navbar-brand" href="${pageContext.request.contextPath}/index.jsp">Yandeguang</a> </div>
+                    <a class="navbar-brand" href="/">Yandeguang</a> </div>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="">消息 <span class="badge">1</span></a></li>
@@ -61,8 +61,8 @@
                 <li><a href="index.html">报告</a></li>
             </ul>
             <ul class="nav nav-sidebar">
-                <li class="active"><a href="article.html">文章</a></li>
-                <li><a href="notice.html">公告</a></li>
+                <li><a href="article.html">文章</a></li>
+                <li class="active"><a href="notice.html">公告</a></li>
                 <li><a href="comment.html">评论</a></li>
                 <li><a data-toggle="tooltip" data-placement="top" title="网站暂无留言功能">留言</a></li>
             </ul>
@@ -98,16 +98,16 @@
         </aside>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-lg-10 col-md-offset-2 main" id="main">
             <div class="row">
-                <form action="/Article/add" method="post" class="add-article-form">
+                <form action="test.php" method="post" class="add-article-form">
                     <div class="col-md-9">
-                        <h1 class="page-header">撰写新文章</h1>
+                        <h1 class="page-header">撰写新公告</h1>
                         <div class="form-group">
                             <label for="article-title" class="sr-only">标题</label>
                             <input type="text" id="article-title" name="title" class="form-control" placeholder="在此处输入标题" required autofocus autocomplete="off">
                         </div>
                         <div class="form-group">
                             <label for="article-content" class="sr-only">内容</label>
-                            <script id="article-content" name="content" type="text/plain"></script>
+                            <textarea id="article-content" name="content" class="form-control"></textarea>
                         </div>
                         <div class="add-article-box">
                             <h2 class="add-article-box-title"><span>关键字</span></h2>
@@ -126,53 +126,6 @@
                     </div>
                     <div class="col-md-3">
                         <h1 class="page-header">操作</h1>
-                        <div class="add-article-box">
-                            <h2 class="add-article-box-title"><span>栏目</span></h2>
-                            <div class="add-article-box-content">
-                                <ul class="category-list">
-                                    <li>
-                                        <label>
-                                            <input name="category" type="radio" value="1" checked>
-                                            这是栏目 <em class="hidden-md">( 栏目ID: <span>1</span> )</em></label>
-                                    </li>
-                                    <li>
-                                        <label>
-                                            <input name="category" type="radio" value="2">
-                                            这是栏目 <em class="hidden-md">( 栏目ID: <span>2</span> )</em></label>
-                                    </li>
-                                    <li>
-                                        <label>
-                                            <input name="category" type="radio" value="3">
-                                            这是栏目 <em class="hidden-md">( 栏目ID: <span>3</span> )</em></label>
-                                    </li>
-                                    <li>
-                                        <label>
-                                            <input name="category" type="radio" value="4">
-                                            这是栏目 <em class="hidden-md">( 栏目ID: <span>4</span> )</em></label>
-                                    </li>
-                                    <li>
-                                        <label>
-                                            <input name="category" type="radio" value="5">
-                                            这是栏目 <em class="hidden-md">( 栏目ID: <span>5</span> )</em></label>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="add-article-box">
-                            <h2 class="add-article-box-title"><span>标签</span></h2>
-                            <div class="add-article-box-content">
-                                <input type="text" class="form-control" placeholder="输入新标签" name="tags" autocomplete="off">
-                                <span class="prompt-text">多个标签请用英文逗号,隔开</span> </div>
-                        </div>
-                        <div class="add-article-box">
-                            <h2 class="add-article-box-title"><span>标题图片</span></h2>
-                            <div class="add-article-box-content">
-                                <input type="text" class="form-control" placeholder="点击按钮选择图片" id="pictureUpload" name="titlepic" autocomplete="off">
-                            </div>
-                            <div class="add-article-box-footer">
-                                <button class="btn btn-default" type="button" ID="upImage">选择</button>
-                            </div>
-                        </div>
                         <div class="add-article-box">
                             <h2 class="add-article-box-title"><span>发布</span></h2>
                             <div class="add-article-box-content">
@@ -298,7 +251,7 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title" id="WeChatModalLabel" style="cursor:default;">微信扫一扫</h4>
             </div>
-            <div class="modal-body" style="text-align:center"> <img src="images/weixin.jpg" alt="" style="cursor:pointer"/> </div>
+            <div class="modal-body" style="text-align:center"> <img src="${pageContext.request.contextPath}/images/weixin.jpg" alt="" style="cursor:pointer"/> </div>
         </div>
     </div>
 </div>
@@ -310,7 +263,7 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title" id="areDevelopingModalLabel" style="cursor:default;">该功能正在日以继夜的开发中…</h4>
             </div>
-            <div class="modal-body"> <img src="images/baoman/baoman_01.gif" alt="深思熟虑" />
+            <div class="modal-body"> <img src="${pageContext.request.contextPath}/images/baoman/baoman_01.gif" alt="深思熟虑" />
                 <p style="padding:15px 15px 15px 100px; position:absolute; top:15px; cursor:default;">很抱歉，程序猿正在日以继夜的开发此功能，本程序将会在以后的版本中持续完善！</p>
             </div>
             <div class="modal-footer">
@@ -331,47 +284,14 @@
 </div>
 <script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
 <script src="${pageContext.request.contextPath}/js/admin-scripts.js"></script>
-<script src="${pageContext.request.contextPath}/lib/ueditor/ueditor.config.js"></script>
-<script src="${pageContext.request.contextPath}/lib/ueditor/ueditor.all.min.js"> </script>
-<script src="${pageContext.request.contextPath}/lib/ueditor/lang/zh-cn/zh-cn.js"></script>
-<script id="uploadEditor" type="text/plain" style="display:none;"></script>
-<script type="text/javascript">
-    var editor = UE.getEditor('article-content');
-    window.onresize=function(){
-        window.location.reload();
-    }
-    var _uploadEditor;
-    $(function () {
-        //重新实例化一个编辑器，防止在上面的editor编辑器中显示上传的图片或者文件
-        _uploadEditor = UE.getEditor('uploadEditor');
-        _uploadEditor.ready(function () {
-            //设置编辑器不可用
-            //_uploadEditor.setDisabled();
-            //隐藏编辑器，因为不会用到这个编辑器实例，所以要隐藏
-            _uploadEditor.hide();
-            //侦听图片上传
-            _uploadEditor.addListener('beforeInsertImage', function (t, arg) {
-                //将地址赋值给相应的input,只去第一张图片的路径
-                $("#pictureUpload").attr("value", arg[0].src);
-                //图片预览
-                //$("#imgPreview").attr("src", arg[0].src);
-            })
-            //侦听文件上传，取上传文件列表中第一个上传的文件的路径
-            _uploadEditor.addListener('afterUpfile', function (t, arg) {
-                $("#fileUpload").attr("value", _uploadEditor.options.filePath + arg[0].url);
-            })
-        });
+<!--summernote富文本编辑器-->
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/lib/summernote/summernote.css">
+<script src="${pageContext.request.contextPath}/lib/summernote/summernote.js"></script>
+<script src="${pageContext.request.contextPath}/lib/summernote/lang/summernote-zh-CN.js"></script>
+<script>
+    $('#article-content').summernote({
+        lang: 'zh-CN'
     });
-    //弹出图片上传的对话框
-    $('#upImage').click(function () {
-        var myImage = _uploadEditor.getDialog("insertimage");
-        myImage.open();
-    });
-    //弹出文件上传的对话框
-    function upFiles() {
-        var myFiles = _uploadEditor.getDialog("attachment");
-        myFiles.open();
-    }
 </script>
 </body>
 </html>
