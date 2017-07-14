@@ -135,7 +135,7 @@
     </div><!-- /.container-fluid -->
 </nav>
 <h1>注册</h1>
-<form action="${pageContext.request.contextPath}user/register" method="post" class="div">
+<form action="${pageContext.request.contextPath}/admin/register" method="post" class="div">
     用户名： <input type="text" name="username"  onblur="checkUsername(this.value)"><span id="msg"></span> <br>
     密码： <input type="password" name="password" > <br>
     <input type="submit" value="提交" onclick="r();"/>

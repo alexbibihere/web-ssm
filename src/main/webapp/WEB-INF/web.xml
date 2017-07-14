@@ -47,7 +47,7 @@
 
     <!-- 防止spring内存溢出监听器，比如quartz -->
     <!--<listener>
-        <listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
+        <listener-class>org.springframework.web.utils.IntrospectorCleanupListener</listener-class>
     </listener>-->
 
     <!-- spring mvc servlet-->

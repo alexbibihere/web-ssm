@@ -15,17 +15,15 @@ public interface AdminDao {
 
     List<Admin> findAllUser();
 
-     User checkLogin(String username, String password);
+     Admin selectByUsername(String username);
 
     int deleteByPrimaryKey(int id);
 
     int updateByPrimaryKey(Admin admin);
 
-    int insertSelective(Admin admin);
+    int insert(Admin admin);
 
     Admin selectByPrimaryKey(int id);
-
-    Admin selectByNick(String nick);
 
     List<Admin> selectByParams (Map<String,Object> params);
 }

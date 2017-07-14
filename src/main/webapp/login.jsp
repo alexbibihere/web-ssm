@@ -34,7 +34,7 @@
 <body class="user-select">
 <div class="container">
     <div class="siteIcon"><img src="html/images/icon.png" alt="" data-toggle="tooltip" data-placement="top" title="欢迎使用我的博客" draggable="false" /></div>
-    <form action="user/login" method="post" autocomplete="off" class="form-signin">
+    <form action="admin/login" method="post" autocomplete="off" class="form-signin">
         <h2 class="form-signin-heading">管理员登录</h2>
         <label for="userName" class="sr-only">用户名</label>
         <input type="text" id="userName" name="username" class="form-control" placeholder="请输入用户名" required autofocus autocomplete="off" maxlength="10">

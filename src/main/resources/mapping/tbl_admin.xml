@@ -15,7 +15,7 @@
         WHERE id = #{Id}
     </select>
 
-    <select id="selectByNick" parameterType="com.yan.ssm.model.Admin" resultMap="BaseMap">
+    <select id="selectByUsername" parameterType="com.yan.ssm.model.Admin" resultMap="BaseMap">
         SELECT * FROM tbl_admin
         WHERE username = #{username}
     </select>
@@ -37,7 +37,8 @@
     </update>
 
     <insert id="insert"  parameterType="com.yan.ssm.model.Admin">
-        insert into tbl_admin where id=#{id},username=#{username},password=#{password}
+        insert into tbl_admin (username,password)
+        values (#{username},#{password})
     </insert>
 
     <select id="selectByParams" resultMap="BaseMap">

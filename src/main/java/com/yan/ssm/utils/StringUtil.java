@@ -1,4 +1,4 @@
-package com.yan.ssm.util;
+package com.yan.ssm.utils;
 
 /**
  * Created by yan on 2017/6/29/0029.

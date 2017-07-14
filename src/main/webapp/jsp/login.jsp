@@ -11,7 +11,7 @@
     <title>管理员后台</title>
 </head>
 <link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet">
-
+<script src="${pageContext.request.contextPath}/js/jquery-2.1.4.min.js"></script>
 <body>
 
 <nav class="navbar navbar-default">
@@ -71,20 +71,57 @@
 </nav>
 <div class="container" style="width:300px;border:blue;">
 
-    <form class="form-signin" action="${pageContext.request.contextPath}/user/login" method="post">
+<%--
+    <form class="form-signin" action="${pageContext.request.contextPath}/admin/login" method="post" id="login_form">
+--%>
         <h2 class="form-signin-heading">登录</h2>
         <label for="username" class="sr-only">Email address</label>
         <input type="text" id="username" class="form-control" placeholder="请输入管理员账号" required autofocus>
+        <span id="user_alert" style="color:red;visibility:hidden">请输入账号</span>
         <label for="inputPassword" class="sr-only">Password</label>
         <input type="password" id="inputPassword" class="form-control" placeholder="请输入密码" required>
+        <span id="pwd_alert" style="color:red;visibility: hidden">请输入密码</span>
         <div class="checkbox">
             <label>
                 <input type="checkbox" value="remember-me"> 记住我
             </label>
         </div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
-    </form>
+        <button id="submit" class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
+    <span id="login_error" style="color:red;visibility: hidden">用户密码不匹配，请重新输入</span>
+
 
 </div>
+
+<script type="text/javascript">
+    $(function () {
+        $("#submit").click(function () {
+            var user = $("#username").val();
+            var pwd = $("#inputPassword").val();
+            var verify = true;
+            if(user.length==0){
+                $("#user_alert").css("visibility","visible");
+                verify = false;
+            }
+            if(pwd.length==0){
+                $("#pwd_alert").css("visibility","visible");
+                verify = false;
+            }
+            if(verify){
+                $.ajax({
+                    type:"POST",
+                    url:"${pageContext.request.contextPath}/admin/login",
+                    data:{"username":user,"password":pwd},
+                    success: function (data) {
+                       if(data =="login_success"){
+                            window.location.href="${pageContext.request.contextPath}/jsp/admin/admin.jsp";
+                       }else {
+                           $("#login_error").css("visibility","visible");
+                       }
+                    }
+                })
+            }
+        });
+    })
+</script>
 </body>
 </html>

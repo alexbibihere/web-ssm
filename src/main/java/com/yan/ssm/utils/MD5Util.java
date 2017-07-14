@@ -1,4 +1,4 @@
-package com.yan.ssm.util;
+package com.yan.ssm.utils;
 
 import java.security.MessageDigest;
 
@@ -40,6 +40,17 @@ public class MD5Util {
         return resultString;
     }
 
+
+    public static Boolean checkPassword(String password, String Md5pwd) {
+        if (MD5Encode(password,"utf-8").equals(Md5pwd)){
+            return  true;
+        }
+        return false;
+    }
+
     private static final String hexDigits[] = {"0", "1", "2", "3", "4", "5",
             "6", "7", "8", "9", "a", "b", "c", "d", "e", "f"};
+
+
+
 }

@@ -10,7 +10,7 @@ import java.util.Map;
  */
 public interface AdminService {
 
-    Admin checkLogin(String username, String password);
+    Admin selectByUsername(String username);
 
     List<Admin> findAllUser();
 
@@ -18,11 +18,10 @@ public interface AdminService {
 
     int updateByPrimaryKey(Admin admin);
 
-    int insertSelective(Admin admin);
+    int insert(Admin admin);
 
     Admin selectByPrimaryKey(int id);
 
     List<Admin> selectByParams (Map<String,Object> params);
 
-    Admin selectByNick(String nick);
 }
